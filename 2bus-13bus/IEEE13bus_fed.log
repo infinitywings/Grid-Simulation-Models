@@ -1,0 +1,202 @@
+[2025-06-09 11:51:58.937] [console] [info] IEEE13bus_fed::registering Input 
+[2025-06-09 11:51:58.937] [console] [info] IEEE13bus_fed::registering Input 
+[2025-06-09 11:51:58.937] [console] [info] IEEE13bus_fed::registering Input 
+
+WARNING  [INIT] : switch objects may not behave properly under FBS!
+[2025-06-09 11:51:59.013] [console] [debug] IEEE13bus_fed (131076)[initializing]::Granting Initialization
+[2025-06-09 11:51:59.013] [console] [debug] IEEE13bus_fed (131076)[initializing]::Granted Time=-9223372036.854776
+[2025-06-09 11:51:59.014] [console] [debug] IEEE13bus_fed (131076)[executing]::Granting Execution
+[2025-06-09 11:51:59.014] [console] [debug] IEEE13bus_fed (131076)[0]::Granted Time=0
+[2025-06-09 11:51:59.024] [console] [debug] IEEE13bus_fed[0]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.024] [console] [debug] IEEE13bus_fed[0]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.024] [console] [debug] IEEE13bus_fed[0]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.024] [console] [debug] IEEE13bus_fed (131076)[0]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 0
+[2025-06-09 11:51:59.024] [console] [debug] IEEE13bus_fed (131076)[0]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 0
+[2025-06-09 11:51:59.024] [console] [debug] IEEE13bus_fed (131076)[0]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 0
+[2025-06-09 11:51:59.024] [console] [debug] IEEE13bus_fed (131076)[0]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 0
+[2025-06-09 11:51:59.024] [console] [debug] IEEE13bus_fed (131076)[0]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 0
+[2025-06-09 11:51:59.024] [console] [debug] IEEE13bus_fed (131076)[0]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 0
+[2025-06-09 11:51:59.028] [console] [debug] IEEE13bus_fed (131076)[0]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 0 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.028] [console] [debug] IEEE13bus_fed (131076)[0]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 0 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.028] [console] [debug] IEEE13bus_fed (131076)[0]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 0 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.125] [console] [debug] IEEE13bus_fed (131076)[1]::Granted Time=1
+[2025-06-09 11:51:59.131] [console] [debug] IEEE13bus_fed[1]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.131] [console] [debug] IEEE13bus_fed[1]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.131] [console] [debug] IEEE13bus_fed[1]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.131] [console] [debug] IEEE13bus_fed (131076)[1]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 1
+[2025-06-09 11:51:59.131] [console] [debug] IEEE13bus_fed (131076)[1]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 1
+[2025-06-09 11:51:59.131] [console] [debug] IEEE13bus_fed (131076)[1]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 1
+[2025-06-09 11:51:59.131] [console] [debug] IEEE13bus_fed (131076)[1]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 1
+[2025-06-09 11:51:59.131] [console] [debug] IEEE13bus_fed (131076)[1]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 1
+[2025-06-09 11:51:59.131] [console] [debug] IEEE13bus_fed (131076)[1]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 1
+[2025-06-09 11:51:59.154] [console] [debug] IEEE13bus_fed (131076)[1]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 1 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.154] [console] [debug] IEEE13bus_fed (131076)[1]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 1 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.154] [console] [debug] IEEE13bus_fed (131076)[1]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 1 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.154] [console] [debug] IEEE13bus_fed (131076)[2]::Granted Time=2
+[2025-06-09 11:51:59.158] [console] [debug] IEEE13bus_fed[2]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.158] [console] [debug] IEEE13bus_fed[2]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.158] [console] [debug] IEEE13bus_fed[2]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.158] [console] [debug] IEEE13bus_fed (131076)[2]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 2
+[2025-06-09 11:51:59.158] [console] [debug] IEEE13bus_fed (131076)[2]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 2
+[2025-06-09 11:51:59.158] [console] [debug] IEEE13bus_fed (131076)[2]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 2
+[2025-06-09 11:51:59.158] [console] [debug] IEEE13bus_fed (131076)[2]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 2
+[2025-06-09 11:51:59.158] [console] [debug] IEEE13bus_fed (131076)[2]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 2
+[2025-06-09 11:51:59.158] [console] [debug] IEEE13bus_fed (131076)[2]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 2
+[2025-06-09 11:51:59.172] [console] [debug] IEEE13bus_fed (131076)[2]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 2 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.172] [console] [debug] IEEE13bus_fed (131076)[2]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 2 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.172] [console] [debug] IEEE13bus_fed (131076)[2]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 2 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.172] [console] [debug] IEEE13bus_fed (131076)[3]::Granted Time=3
+[2025-06-09 11:51:59.176] [console] [debug] IEEE13bus_fed[3]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.176] [console] [debug] IEEE13bus_fed[3]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.176] [console] [debug] IEEE13bus_fed[3]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.176] [console] [debug] IEEE13bus_fed (131076)[3]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 3
+[2025-06-09 11:51:59.176] [console] [debug] IEEE13bus_fed (131076)[3]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 3
+[2025-06-09 11:51:59.176] [console] [debug] IEEE13bus_fed (131076)[3]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 3
+[2025-06-09 11:51:59.176] [console] [debug] IEEE13bus_fed (131076)[3]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 3
+[2025-06-09 11:51:59.176] [console] [debug] IEEE13bus_fed (131076)[3]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 3
+[2025-06-09 11:51:59.176] [console] [debug] IEEE13bus_fed (131076)[3]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 3
+[2025-06-09 11:51:59.191] [console] [debug] IEEE13bus_fed (131076)[3]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 3 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.191] [console] [debug] IEEE13bus_fed (131076)[3]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 3 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.191] [console] [debug] IEEE13bus_fed (131076)[3]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 3 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.191] [console] [debug] IEEE13bus_fed (131076)[4]::Granted Time=4
+[2025-06-09 11:51:59.194] [console] [debug] IEEE13bus_fed[4]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.194] [console] [debug] IEEE13bus_fed[4]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.194] [console] [debug] IEEE13bus_fed[4]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.194] [console] [debug] IEEE13bus_fed (131076)[4]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 4
+[2025-06-09 11:51:59.194] [console] [debug] IEEE13bus_fed (131076)[4]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 4
+[2025-06-09 11:51:59.194] [console] [debug] IEEE13bus_fed (131076)[4]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 4
+[2025-06-09 11:51:59.194] [console] [debug] IEEE13bus_fed (131076)[4]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 4
+[2025-06-09 11:51:59.194] [console] [debug] IEEE13bus_fed (131076)[4]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 4
+[2025-06-09 11:51:59.194] [console] [debug] IEEE13bus_fed (131076)[4]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 4
+[2025-06-09 11:51:59.210] [console] [debug] IEEE13bus_fed (131076)[4]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 4 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.210] [console] [debug] IEEE13bus_fed (131076)[4]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 4 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.210] [console] [debug] IEEE13bus_fed (131076)[4]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 4 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.210] [console] [debug] IEEE13bus_fed (131076)[5]::Granted Time=5
+[2025-06-09 11:51:59.216] [console] [debug] IEEE13bus_fed[5]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.216] [console] [debug] IEEE13bus_fed[5]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.216] [console] [debug] IEEE13bus_fed[5]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.216] [console] [debug] IEEE13bus_fed (131076)[5]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 5
+[2025-06-09 11:51:59.216] [console] [debug] IEEE13bus_fed (131076)[5]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 5
+[2025-06-09 11:51:59.216] [console] [debug] IEEE13bus_fed (131076)[5]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 5
+[2025-06-09 11:51:59.216] [console] [debug] IEEE13bus_fed (131076)[5]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 5
+[2025-06-09 11:51:59.216] [console] [debug] IEEE13bus_fed (131076)[5]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 5
+[2025-06-09 11:51:59.216] [console] [debug] IEEE13bus_fed (131076)[5]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 5
+[2025-06-09 11:51:59.236] [console] [debug] IEEE13bus_fed (131076)[5]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 5 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.236] [console] [debug] IEEE13bus_fed (131076)[5]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 5 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.236] [console] [debug] IEEE13bus_fed (131076)[5]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 5 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.236] [console] [debug] IEEE13bus_fed (131076)[6]::Granted Time=6
+[2025-06-09 11:51:59.242] [console] [debug] IEEE13bus_fed[6]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.242] [console] [debug] IEEE13bus_fed[6]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.242] [console] [debug] IEEE13bus_fed[6]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.242] [console] [debug] IEEE13bus_fed (131076)[6]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 6
+[2025-06-09 11:51:59.242] [console] [debug] IEEE13bus_fed (131076)[6]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 6
+[2025-06-09 11:51:59.242] [console] [debug] IEEE13bus_fed (131076)[6]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 6
+[2025-06-09 11:51:59.242] [console] [debug] IEEE13bus_fed (131076)[6]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 6
+[2025-06-09 11:51:59.242] [console] [debug] IEEE13bus_fed (131076)[6]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 6
+[2025-06-09 11:51:59.242] [console] [debug] IEEE13bus_fed (131076)[6]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 6
+[2025-06-09 11:51:59.257] [console] [debug] IEEE13bus_fed (131076)[6]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 6 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.257] [console] [debug] IEEE13bus_fed (131076)[6]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 6 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.257] [console] [debug] IEEE13bus_fed (131076)[6]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 6 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.257] [console] [debug] IEEE13bus_fed (131076)[7]::Granted Time=7
+[2025-06-09 11:51:59.263] [console] [debug] IEEE13bus_fed[7]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.263] [console] [debug] IEEE13bus_fed[7]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.263] [console] [debug] IEEE13bus_fed[7]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.263] [console] [debug] IEEE13bus_fed (131076)[7]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 7
+[2025-06-09 11:51:59.263] [console] [debug] IEEE13bus_fed (131076)[7]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 7
+[2025-06-09 11:51:59.263] [console] [debug] IEEE13bus_fed (131076)[7]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 7
+[2025-06-09 11:51:59.263] [console] [debug] IEEE13bus_fed (131076)[7]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 7
+[2025-06-09 11:51:59.263] [console] [debug] IEEE13bus_fed (131076)[7]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 7
+[2025-06-09 11:51:59.263] [console] [debug] IEEE13bus_fed (131076)[7]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 7
+[2025-06-09 11:51:59.284] [console] [debug] IEEE13bus_fed (131076)[7]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 7 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.284] [console] [debug] IEEE13bus_fed (131076)[7]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 7 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.284] [console] [debug] IEEE13bus_fed (131076)[7]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 7 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.284] [console] [debug] IEEE13bus_fed (131076)[8]::Granted Time=8
+[2025-06-09 11:51:59.288] [console] [debug] IEEE13bus_fed[8]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.288] [console] [debug] IEEE13bus_fed[8]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.288] [console] [debug] IEEE13bus_fed[8]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.288] [console] [debug] IEEE13bus_fed (131076)[8]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 8
+[2025-06-09 11:51:59.288] [console] [debug] IEEE13bus_fed (131076)[8]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 8
+[2025-06-09 11:51:59.288] [console] [debug] IEEE13bus_fed (131076)[8]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 8
+[2025-06-09 11:51:59.288] [console] [debug] IEEE13bus_fed (131076)[8]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 8
+[2025-06-09 11:51:59.288] [console] [debug] IEEE13bus_fed (131076)[8]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 8
+[2025-06-09 11:51:59.288] [console] [debug] IEEE13bus_fed (131076)[8]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 8
+[2025-06-09 11:51:59.309] [console] [debug] IEEE13bus_fed (131076)[8]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 8 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.309] [console] [debug] IEEE13bus_fed (131076)[8]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 8 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.309] [console] [debug] IEEE13bus_fed (131076)[8]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 8 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.309] [console] [debug] IEEE13bus_fed (131076)[9]::Granted Time=9
+[2025-06-09 11:51:59.313] [console] [debug] IEEE13bus_fed[9]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.313] [console] [debug] IEEE13bus_fed[9]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.313] [console] [debug] IEEE13bus_fed[9]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.313] [console] [debug] IEEE13bus_fed (131076)[9]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 9
+[2025-06-09 11:51:59.313] [console] [debug] IEEE13bus_fed (131076)[9]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 9
+[2025-06-09 11:51:59.313] [console] [debug] IEEE13bus_fed (131076)[9]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 9
+[2025-06-09 11:51:59.313] [console] [debug] IEEE13bus_fed (131076)[9]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 9
+[2025-06-09 11:51:59.313] [console] [debug] IEEE13bus_fed (131076)[9]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 9
+[2025-06-09 11:51:59.313] [console] [debug] IEEE13bus_fed (131076)[9]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 9
+[2025-06-09 11:51:59.335] [console] [debug] IEEE13bus_fed (131076)[9]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 9 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.335] [console] [debug] IEEE13bus_fed (131076)[9]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 9 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.335] [console] [debug] IEEE13bus_fed (131076)[9]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 9 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.335] [console] [debug] IEEE13bus_fed (131076)[10]::Granted Time=10
+[2025-06-09 11:51:59.340] [console] [debug] IEEE13bus_fed[10]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.340] [console] [debug] IEEE13bus_fed[10]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.340] [console] [debug] IEEE13bus_fed[10]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.340] [console] [debug] IEEE13bus_fed (131076)[10]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 10
+[2025-06-09 11:51:59.340] [console] [debug] IEEE13bus_fed (131076)[10]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 10
+[2025-06-09 11:51:59.340] [console] [debug] IEEE13bus_fed (131076)[10]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 10
+[2025-06-09 11:51:59.340] [console] [debug] IEEE13bus_fed (131076)[10]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 10
+[2025-06-09 11:51:59.340] [console] [debug] IEEE13bus_fed (131076)[10]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 10
+[2025-06-09 11:51:59.340] [console] [debug] IEEE13bus_fed (131076)[10]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 10
+[2025-06-09 11:51:59.362] [console] [debug] IEEE13bus_fed (131076)[10]::receive PUBLICATION pub:From (131072) handle(3) size 0 at 10 to 131076 from gridpack/Va
+[2025-06-09 11:51:59.362] [console] [debug] IEEE13bus_fed (131076)[10]::receive PUBLICATION pub:From (131072) handle(4) size 0 at 10 to 131076 from gridpack/Vb
+[2025-06-09 11:51:59.362] [console] [debug] IEEE13bus_fed (131076)[10]::receive PUBLICATION pub:From (131072) handle(5) size 0 at 10 to 131076 from gridpack/Vc
+[2025-06-09 11:51:59.362] [console] [debug] IEEE13bus_fed (131076)[11]::Granted Time=11
+[2025-06-09 11:51:59.369] [console] [debug] IEEE13bus_fed[11]::setting value for gld_hlc_conn/Sa size 24
+[2025-06-09 11:51:59.369] [console] [debug] IEEE13bus_fed[11]::setting value for gld_hlc_conn/Sb size 24
+[2025-06-09 11:51:59.369] [console] [debug] IEEE13bus_fed[11]::setting value for gld_hlc_conn/Sc size 24
+[2025-06-09 11:51:59.369] [console] [debug] IEEE13bus_fed (131076)[11]::send_message send_message:From ()(131076:6) To EV_Controller/EV6 size 12 at 11
+[2025-06-09 11:51:59.369] [console] [debug] IEEE13bus_fed (131076)[11]::send_message send_message:From ()(131076:7) To EV_Controller/EV5 size 12 at 11
+[2025-06-09 11:51:59.369] [console] [debug] IEEE13bus_fed (131076)[11]::send_message send_message:From ()(131076:8) To EV_Controller/EV4 size 12 at 11
+[2025-06-09 11:51:59.369] [console] [debug] IEEE13bus_fed (131076)[11]::send_message send_message:From ()(131076:9) To EV_Controller/EV3 size 17 at 11
+[2025-06-09 11:51:59.369] [console] [debug] IEEE13bus_fed (131076)[11]::send_message send_message:From ()(131076:10) To EV_Controller/EV2 size 17 at 11
+[2025-06-09 11:51:59.369] [console] [debug] IEEE13bus_fed (131076)[11]::send_message send_message:From ()(131076:11) To EV_Controller/EV1 size 17 at 11
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV6)(0:-1700000000) To gld_hlc_conn/EV6 size 11 at 3660
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV5)(0:-1700000000) To gld_hlc_conn/EV5 size 11 at 3660
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV4)(0:-1700000000) To gld_hlc_conn/EV4 size 11 at 3660
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV3)(0:-1700000000) To gld_hlc_conn/EV3 size 11 at 3660
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV2)(0:-1700000000) To gld_hlc_conn/EV2 size 11 at 3660
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV1)(0:-1700000000) To gld_hlc_conn/EV1 size 11 at 3660
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV6)(0:-1700000000) To gld_hlc_conn/EV6 size 11 at 4800
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV5)(0:-1700000000) To gld_hlc_conn/EV5 size 11 at 4800
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV4)(0:-1700000000) To gld_hlc_conn/EV4 size 11 at 4800
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV3)(0:-1700000000) To gld_hlc_conn/EV3 size 11 at 4800
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV2)(0:-1700000000) To gld_hlc_conn/EV2 size 11 at 4800
+[2025-06-09 11:51:59.373] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV1)(0:-1700000000) To gld_hlc_conn/EV1 size 11 at 4800
+[2025-06-09 11:51:59.374] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV6)(0:-1700000000) To gld_hlc_conn/EV6 size 11 at 6000
+[2025-06-09 11:51:59.374] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV5)(0:-1700000000) To gld_hlc_conn/EV5 size 11 at 6000
+[2025-06-09 11:51:59.374] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV4)(0:-1700000000) To gld_hlc_conn/EV4 size 11 at 6000
+[2025-06-09 11:51:59.374] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV3)(0:-1700000000) To gld_hlc_conn/EV3 size 11 at 6000
+[2025-06-09 11:51:59.374] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV2)(0:-1700000000) To gld_hlc_conn/EV2 size 11 at 6000
+[2025-06-09 11:51:59.374] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV1)(0:-1700000000) To gld_hlc_conn/EV1 size 11 at 6000
+[2025-06-09 11:51:59.375] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV6)(0:-1700000000) To gld_hlc_conn/EV6 size 11 at 7200
+[2025-06-09 11:51:59.375] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV5)(0:-1700000000) To gld_hlc_conn/EV5 size 11 at 7200
+[2025-06-09 11:51:59.375] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV4)(0:-1700000000) To gld_hlc_conn/EV4 size 11 at 7200
+[2025-06-09 11:51:59.375] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV3)(0:-1700000000) To gld_hlc_conn/EV3 size 11 at 7200
+[2025-06-09 11:51:59.375] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV2)(0:-1700000000) To gld_hlc_conn/EV2 size 11 at 7200
+[2025-06-09 11:51:59.375] [console] [debug] IEEE13bus_fed (131076)[11]::receive_message send_message:From (EV_Controller/EV1)(0:-1700000000) To gld_hlc_conn/EV1 size 11 at 7200
+[2025-06-09 11:52:13.833] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:52:28.834] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:52:43.835] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:52:58.836] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:53:13.836] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:53:28.837] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:53:43.838] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:53:58.839] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:54:13.840] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:54:28.840] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:54:43.841] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:54:58.842] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:55:13.843] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:55:28.844] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:55:43.845] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:55:58.846] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick
+[2025-06-09 11:56:13.847] [console] [info] IEEE13bus Core (1879048195)[t=11]:: core tick

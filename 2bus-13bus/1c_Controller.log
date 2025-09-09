@@ -1,0 +1,17 @@
+HELICS Version: 3.6.1 (2025-02-24)
+EVControllerSim: Federate EVControllerSim has been registered
+EVControllerSim: Registered Endpoint ---> EV6
+EVControllerSim: Registered Endpoint ---> EV5
+EVControllerSim: Registered Endpoint ---> EV4
+EVControllerSim: Registered Endpoint ---> EV3
+EVControllerSim: Registered Endpoint ---> EV2
+EVControllerSim: Registered Endpoint ---> EV1
+EVControllerSim: Registered Subscription ---> gld_hlc_conn/Sa
+EVControllerSim: Registered Subscription ---> gld_hlc_conn/Sb
+EVControllerSim: Registered Subscription ---> gld_hlc_conn/Sc
+EVControllerSim: Granted Time = 60.0
+EVControllerSim: Load = 2142.38 kW + 889.51 kVAr
+EVControllerSim: Low-load action executed
+Saved feeder and EV output plots as 1c_EV_Outputs.png
+EVControllerSim: Finished time loop, finalizing federate.
+Federate finalized

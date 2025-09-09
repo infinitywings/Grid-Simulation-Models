@@ -1,0 +1,9 @@
+# file...... EV1_INVERTER1.csv
+# date...... Tue Jul  8 11:16:34 2025
+# user...... sbesati
+# host...... (null)
+# target.... meter 823
+# trigger... (none)
+# interval.. 1200
+# limit..... 720
+# timestamp,measured_voltage_C,measured_power_C,measured_frequency_C

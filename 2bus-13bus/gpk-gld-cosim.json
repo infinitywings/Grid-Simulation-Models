@@ -1,0 +1,30 @@
+{
+  "name": "PowerFlow_GPK_GLD_Cosim",
+  "broker": true,
+    "federates": [
+	{
+	    "directory" : ".",
+	    "exec" : "gridlabd 1c_IEEE_123_feeder.glm",
+	    "host" : "localhost",
+	    "name" : "IEEE123bus_fed"
+	},
+        {
+            "directory" : ".",
+            "exec" : "gridlabd 1c_IEEE_123_feeder_2.glm",
+            "host" : "localhost",
+            "name" : "IEEE123bus_fed_2"
+        },
+        {
+            "directory":".",
+            "exec":"python 1bc_EV_Controller.py -c 1c",
+            "host":"localhost",
+            "name":"1c_Controller"
+        },
+	{
+	    "directory" : ".",
+	    "exec" : "./build/gpk-left-fed.x",
+	    "host" : "localhost",
+	    "name" : "gridpack"
+	}
+    ]
+}

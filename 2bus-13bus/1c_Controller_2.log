@@ -1,0 +1,20 @@
+HELICS Version: 3.6.1 (2025-02-24)
+EVControllerSim_2: Federate EVControllerSim_2 has been registered
+EVControllerSim_2: Registered Endpoint ---> EV6
+EVControllerSim_2: Registered Endpoint ---> EV5
+EVControllerSim_2: Registered Endpoint ---> EV4
+EVControllerSim_2: Registered Endpoint ---> EV3
+EVControllerSim_2: Registered Endpoint ---> EV2
+EVControllerSim_2: Registered Endpoint ---> EV1
+EVControllerSim_2: Registered Subscription ---> gld_hlc_conn_2/Sa
+EVControllerSim_2: Registered Subscription ---> gld_hlc_conn_2/Sb
+EVControllerSim_2: Registered Subscription ---> gld_hlc_conn_2/Sc
+[2025-08-14 18:00:12.774] [console] [warning] EVControllerSim_2 (131075)[created]::Unable to connect to Endpoint target gld_hlc_conn_2/EV1
+[2025-08-14 18:00:12.774] [console] [warning] EVControllerSim_2 (131075)[created]::Unable to connect to Endpoint target gld_hlc_conn_2/EV4
+[2025-08-14 18:00:12.774] [console] [warning] EVControllerSim_2 (131075)[created]::Unable to connect to Endpoint target gld_hlc_conn_2/EV3
+[2025-08-14 18:00:12.774] [console] [warning] EVControllerSim_2 (131075)[created]::Unable to connect to Endpoint target gld_hlc_conn_2/EV5
+[2025-08-14 18:00:12.774] [console] [warning] EVControllerSim_2 (131075)[created]::Unable to connect to Endpoint target gld_hlc_conn_2/EV2
+[2025-08-14 18:00:12.774] [console] [warning] EVControllerSim_2 (131075)[created]::Unable to connect to Endpoint target gld_hlc_conn_2/EV6
+EVControllerSim_2: Granted Time = 60.0
+EVControllerSim_2: Load = 2233.61 kW + 884.07 kVAr
+EVControllerSim_2: Low-load action executed

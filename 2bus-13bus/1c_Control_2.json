@@ -1,0 +1,105 @@
+{
+	"coreInit": "--federates=1",
+	"coreName": "EVController_2 Federate",
+	"coreType": "zmq",
+	"name": "EVControllerSim_2",
+        "period": 60,
+	"logfile": "output.log",
+	"log_level": "warning",
+	"endpoints": [
+                {
+                        "key": "EV_Controller_2/EV6",
+                        "destination": "gld_hlc_conn_2/EV6",
+                        "global": true,
+                        "type": "string",
+                        "info": "This is the endpoint which sends CIM attribute commands to the GridLAB-D simulator."
+                },
+                {
+                        "key": "EV_Controller_2/EV5",
+                        "destination": "gld_hlc_conn_2/EV5",
+                        "global": true,
+                        "type": "string",
+                        "info": "This is the endpoint which sends CIM attribute commands to the GridLAB-D simulator."
+                },
+                {
+                        "key": "EV_Controller_2/EV4",
+                        "destination": "gld_hlc_conn_2/EV4",
+                        "global": true,
+                        "type": "string",
+                        "info": "This is the endpoint which sends CIM attribute commands to the GridLAB-D simulator."
+                },
+                {
+                        "key": "EV_Controller_2/EV3",
+                        "destination": "gld_hlc_conn_2/EV3",
+                        "global": true,
+                        "type": "string",
+                        "info": "This is the endpoint which sends CIM attribute commands to the GridLAB-D simulator."
+                },
+                {
+                        "key": "EV_Controller_2/EV2",
+                        "destination": "gld_hlc_conn_2/EV2",
+                        "global": true,
+                        "type": "string",
+                        "info": "This is the endpoint which sends CIM attribute commands to the GridLAB-D simulator."
+                },
+                {
+                        "key": "EV_Controller_2/EV1",
+                        "destination": "gld_hlc_conn_2/EV1",
+                        "global": true,
+                        "type": "string",
+                        "info": "This is the endpoint which sends CIM attribute commands to the GridLAB-D simulator."
+                }
+
+	],
+	"filters": [
+		{
+			"name": "EVfilters",
+			"sourcetargets": [
+				"EV_Controller_2/EV6",
+				"EV_Controller_2/EV5",
+				"EV_Controller_2/EV4",
+				"EV_Controller_2/EV3",
+				"EV_Controller_2/EV2",
+				"EV_Controller_2/EV1"
+			],
+			"mode": "source",
+			"operation": "delay",
+			"properties": {
+				"name": "delay",
+				"value": 3600
+			}
+		}
+	],
+	"subscriptions": [
+                {
+                    "global": true,
+                    "key": "gld_hlc_conn_2/Sa",
+                    "type": "complex",
+                    "unit" : "VA",
+                    "info": {
+                        "object": "Node650",
+                        "property": "measured_power_A"
+                    }
+                },
+                {
+                    "global": true,
+                    "key": "gld_hlc_conn_2/Sb",
+                    "type": "complex",
+                    "unit" : "VA",
+                    "info": {
+                        "object": "Node650",
+                        "property": "measured_power_B"
+                    }
+                },
+                {
+                    "global": true,
+                    "key": "gld_hlc_conn_2/Sc",
+                    "type": "complex",
+                    "unit" : "VA",
+                    "info": {
+                        "object": "Node650",
+                        "property": "measured_power_C"
+                    }
+                }
+        ]
+}
