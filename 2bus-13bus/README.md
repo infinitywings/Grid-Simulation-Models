@@ -229,4 +229,4 @@ Abnormal P target (VA): 2-4 MW
 </details>
 
 
-**Assumption:** For EV CS 3–6, we assume a specific attack window during the peak demand period (7:00 AM–7:00 PM), since their powers vary dynamically over time.
+**Assumption:** For EV CS 3–6, we assume a specific attack window during the peak demand period (15:00–17:00 PM), since their powers vary dynamically over time.
