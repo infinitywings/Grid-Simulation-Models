@@ -67,126 +67,163 @@ Key details:
 - Uses California traffic patterns for 3 EV stations (EV1, EV5, and EV6)
 
 ## Important Info about the Potential Spots for Attackers:
-************************** EV CS 6 ************************
-EV: EV6
-Switch: swEV6
-Switch phases: AN
-From (link): l114
-To (node/load): EV6
-Switch status: CLOSED
-Load phases: AN
-Nominal voltage (V): 2401.7771
-Power prop: constant_power_A
-Power source: player
-Player ref: ev6_player.value
-Max power (VA): 200 KW
-Recorder properties: constant_power_A
-Recorder interval (s): 60
-Recorder file: output/1c_IEEE_123_feeder_0_EV6.csv
-Recorder window start: 2013-08-28 00:00:00
-Recorder window end:   2013-08-29 00:00:00
-Upstream/Context: From l114
-Abnormal P target (VA): 2-4 MW
-************************** EV CS 5 ************************
-EV: EV5
-Switch: swEV5
-Switch phases: BN
-From (link): l107
-To (node/load): EV5
-Switch status: CLOSED
-Load phases: BN
-Nominal voltage (V): 2401.7771
-Power prop: constant_power_B
-Power source: player
-Player ref: ev5_player.value
-Max power (VA): 200 KW
-Recorder properties: constant_power_B
-Recorder interval (s): 60
-Recorder file: output/1c_IEEE_123_feeder_0_EV5.csv
-Recorder window start: 2013-08-28 00:00:00
-Recorder window end:   2013-08-29 00:00:00
-Upstream/Context: From l107
-Abnormal P target (VA): 2-4 MW
-************************** EV CS 4 ************************
-EV: EV4
-Switch: swEV4
-Switch phases: CN
-From (link): l92
-To (node/load): EV4
-Switch status: CLOSED
-Load phases: CN
-Nominal voltage (V): 2401.7771
-Power prop: constant_power_C
-Power source: player
-Player ref: ev4_player.value
-Max power: 200 KW
-Recorder properties: constant_power_C
-Recorder interval (s): 60
-Recorder file: output/1c_IEEE_123_feeder_0_EV4.csv
-Recorder window start: 2013-08-28 00:00:00
-Recorder window end:   2013-08-29 00:00:00
-Upstream/Context: From l92
+
+<details>
+<summary>************************** EV CS 6 ************************</summary>
+
+EV: EV6  
+Switch: swEV6  
+Switch phases: AN  
+From (link): l114  
+To (node/load): EV6  
+Switch status: CLOSED  
+Load phases: AN  
+Nominal voltage (V): 2401.7771  
+Power prop: constant_power_A  
+Power source: player  
+Player ref: ev6_player.value  
+Max power (VA): 200 KW  
+Recorder properties: constant_power_A  
+Recorder interval (s): 60  
+Recorder file: output/1c_IEEE_123_feeder_0_EV6.csv  
+Recorder window start: 2013-08-28 00:00:00  
+Recorder window end: 2013-08-29 00:00:00  
+Upstream/Context: From l114  
 Abnormal P target (VA): 2-4 MW
 
-************************** EV CS 3 ************************
-EV: EV3
-Switch: swEV3
-Switch phases: AN
-From (link): l88
-To (node/load): EV3
-Switch status: CLOSED
-Load phases: AN
-Nominal voltage (V): 2401.7771
-Power prop: constant_power_A
-Power source: player
-Player ref: ev3_player.value
-Max power: 200 KW
-Recorder properties: constant_power_A
-Recorder interval (s): 60
-Recorder file: output/1c_IEEE_123_feeder_0_EV3.csv
-Recorder window start: 2013-08-28 00:00:00
-Recorder window end:   2013-08-29 00:00:00
-Upstream/Context: From l88
+</details>
+
+---
+
+<details>
+<summary>************************** EV CS 5 ************************</summary>
+
+EV: EV5  
+Switch: swEV5  
+Switch phases: BN  
+From (link): l107  
+To (node/load): EV5  
+Switch status: CLOSED  
+Load phases: BN  
+Nominal voltage (V): 2401.7771  
+Power prop: constant_power_B  
+Power source: player  
+Player ref: ev5_player.value  
+Max power (VA): 200 KW  
+Recorder properties: constant_power_B  
+Recorder interval (s): 60  
+Recorder file: output/1c_IEEE_123_feeder_0_EV5.csv  
+Recorder window start: 2013-08-28 00:00:00  
+Recorder window end: 2013-08-29 00:00:00  
+Upstream/Context: From l107  
 Abnormal P target (VA): 2-4 MW
 
-************************** EV CS 2 ************************
-EV: EV2
-Switch: swEV2
-Switch phases: BN
-From (link): l2
-To (node/load): EV2
-Switch status: CLOSED
-Load phases: BN
-Nominal voltage (V): 2401.7771
-Power prop: constant_power_B
-Power source: fixed
-Player ref: —
-Base power : 200 KW
-Recorder properties: constant_power_B
-Recorder interval (s): 60
-Recorder file: output/1c_IEEE_123_feeder_0_EV2.csv
-Recorder window start: 2013-08-28 00:00:00
-Recorder window end:   2013-08-29 00:00:00
-Upstream/Context: From l2
-Abnormal P target (VA): 2-4 MW
-************************** EV CS 1 ************************
-EV: EV1
-Switch: swEV1
-Switch phases: CN
-From (link): l5
-To (node/load): EV1
-Switch status: CLOSED
-Load phases: CN
-Nominal voltage (V): 2401.7771
-Power prop: constant_power_C
-Power source: fixed
-Player ref: —
-Base power : 200 KW
-Recorder properties: constant_power_C
-Recorder interval (s): 60
-Recorder file: output/1c_IEEE_123_feeder_0_EV1.csv
-Recorder window start: 2013-08-28 00:00:00
-Recorder window end:   2013-08-29 00:00:00
-Upstream/Context: From l5
+</details>
+
+---
+
+<details>
+<summary>************************** EV CS 4 ************************</summary>
+
+EV: EV4  
+Switch: swEV4  
+Switch phases: CN  
+From (link): l92  
+To (node/load): EV4  
+Switch status: CLOSED  
+Load phases: CN  
+Nominal voltage (V): 2401.7771  
+Power prop: constant_power_C  
+Power source: player  
+Player ref: ev4_player.value  
+Max power: 200 KW  
+Recorder properties: constant_power_C  
+Recorder interval (s): 60  
+Recorder file: output/1c_IEEE_123_feeder_0_EV4.csv  
+Recorder window start: 2013-08-28 00:00:00  
+Recorder window end: 2013-08-29 00:00:00  
+Upstream/Context: From l92  
 Abnormal P target (VA): 2-4 MW
 
+</details>
+
+---
+
+<details>
+<summary>************************** EV CS 3 ************************</summary>
+
+EV: EV3  
+Switch: swEV3  
+Switch phases: AN  
+From (link): l88  
+To (node/load): EV3  
+Switch status: CLOSED  
+Load phases: AN  
+Nominal voltage (V): 2401.7771  
+Power prop: constant_power_A  
+Power source: player  
+Player ref: ev3_player.value  
+Max power: 200 KW  
+Recorder properties: constant_power_A  
+Recorder interval (s): 60  
+Recorder file: output/1c_IEEE_123_feeder_0_EV3.csv  
+Recorder window start: 2013-08-28 00:00:00  
+Recorder window end: 2013-08-29 00:00:00  
+Upstream/Context: From l88  
+Abnormal P target (VA): 2-4 MW
+
+</details>
+
+---
+
+<details>
+<summary>************************** EV CS 2 ************************</summary>
+
+EV: EV2  
+Switch: swEV2  
+Switch phases: BN  
+From (link): l2  
+To (node/load): EV2  
+Switch status: CLOSED  
+Load phases: BN  
+Nominal voltage (V): 2401.7771  
+Power prop: constant_power_B  
+Power source: fixed  
+Player ref: —  
+Base power : 200 KW  
+Recorder properties: constant_power_B  
+Recorder interval (s): 60  
+Recorder file: output/1c_IEEE_123_feeder_0_EV2.csv  
+Recorder window start: 2013-08-28 00:00:00  
+Recorder window end: 2013-08-29 00:00:00  
+Upstream/Context: From l2  
+Abnormal P target (VA): 2-4 MW
+
+</details>
+
+---
+
+<details>
+<summary>************************** EV CS 1 ************************</summary>
+
+EV: EV1  
+Switch: swEV1  
+Switch phases: CN  
+From (link): l5  
+To (node/load): EV1  
+Switch status: CLOSED  
+Load phases: CN  
+Nominal voltage (V): 2401.7771  
+Power prop: constant_power_C  
+Power source: fixed  
+Player ref: —  
+Base power : 200 KW  
+Recorder properties: constant_power_C  
+Recorder interval (s): 60  
+Recorder file: output/1c_IEEE_123_feeder_0_EV1.csv  
+Recorder window start: 2013-08-28 00:00:00  
+Recorder window end: 2013-08-29 00:00:00  
+Upstream/Context: From l5  
+Abnormal P target (VA): 2-4 MW
+
+</details>
