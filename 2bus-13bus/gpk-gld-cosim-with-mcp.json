@@ -1,0 +1,53 @@
+{
+  "name": "PowerFlow_GPK_GLD_Cosim_With_MCP",
+  "broker": true,
+  "brokerargs": "-f5 --port=23404 --local",
+  "federates": [
+    {
+      "directory": ".",
+      "exec": "gridlabd 1c_IEEE_123_feeder.glm",
+      "host": "localhost",
+      "name": "IEEE123bus_fed",
+      "environment": {
+        "HELICS_BROKER": "tcp://localhost:23404"
+      }
+    },
+    {
+      "directory": ".",
+      "exec": "gridlabd 1c_IEEE_123_feeder_2.glm",
+      "host": "localhost",
+      "name": "IEEE123bus_fed_2",
+      "environment": {
+        "HELICS_BROKER": "tcp://localhost:23404"
+      }
+    },
+    {
+      "directory": ".",
+      "exec": "python 1bc_EV_Controller.py -c 1c",
+      "host": "localhost",
+      "name": "1c_Controller",
+      "environment": {
+        "HELICS_BROKER": "tcp://localhost:23404"
+      }
+    },
+    {
+      "directory": ".",
+      "exec": "./build/gpk-left-fed.x",
+      "host": "localhost",
+      "name": "gridpack",
+      "environment": {
+        "HELICS_BROKER": "tcp://localhost:23404"
+      }
+    },
+    {
+      "directory": "/app/ev_setpoint_mcp",
+      "exec": "python run_server.py --config config/ev_mcp_local.yaml",
+      "host": "localhost",
+      "name": "ev_attacker_mcp",
+      "environment": {
+        "HELICS_BROKER": "tcp://localhost:23404",
+        "HELICS_BROKER_ADDRESS": "tcp://localhost:23404"
+      }
+    }
+  ]
+}

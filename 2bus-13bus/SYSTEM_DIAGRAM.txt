@@ -1,0 +1,281 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                   2BUS-13BUS T&D CO-SIMULATION SYSTEM                        ║
+║                   Attack-Ready Grid Testbed Architecture                     ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                        DOCKER CONTAINER ENVIRONMENT                          │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+         ┌─────────────────────────────────────────────────────┐
+         │            HELICS Broker (port 23406)               │
+         │         Message Bus for Co-Simulation               │
+         └───────┬─────────────────┬───────────────┬───────────┘
+                 │                 │               │
+      ┌──────────┴──────┐    ┌────┴────────┐  ┌──┴──────────────┐
+      │   GridPACK      │    │  GridLAB-D  │  │  GridLAB-D      │
+      │   Federate      │    │  Feeder A   │  │  Feeder B       │
+      │                 │    │             │  │                 │
+      │ IEEE 9-bus      │◄──►│ IEEE 123    │  │ IEEE 123        │
+      │ Transmission    │    │ + 6 EVs     │  │ (no control)    │
+      │                 │    │             │  │                 │
+      │ gridpack        │    │IEEE13bus_fed│  │IEEE13bus_fed_2  │
+      └─────────────────┘    └──────┬──────┘  └─────────────────┘
+                                    │
+              ┌─────────────────────┼─────────────────────┐
+              │                     │                     │
+      ┌───────▼───────┐    ┌────────▼────────┐   ┌───────▼────────┐
+      │ Legitimate    │    │  Attack MCP     │   │  AI Attacker   │
+      │ EV Controller │    │  Server         │   │  (External)    │
+      │               │    │                 │   │                │
+      │ Peak Shaving  │    │ Malicious       │   │ Strategic      │
+      │ Islanding     │    │ Setpoint        │   │ Planning       │
+      │ Control       │    │ Injection       │   │                │
+      │               │    │                 │   │                │
+      │EVControllerSim│    │ev_attacker_mcp  │   │ REST API       │
+      │               │    │ :5100           │◄──┤ Client         │
+      └───────────────┘    └─────────────────┘   └────────────────┘
+             │                     │
+             │ COMPETING FOR       │
+             │ SAME ENDPOINTS!     │
+             │                     │
+             └──────┬──────────────┘
+                    │
+         ┌──────────▼──────────┐
+         │  gld_hlc_conn/EV1-6 │ ← GridLAB-D EV Load Endpoints
+         │  LAST MESSAGE WINS! │
+         └─────────────────────┘
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                      TRANSMISSION SYSTEM (GRIDPACK)                          ║
+║                           IEEE 9-Bus Network                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+                       69 kV Transmission System
+
+         Gen1                                              Gen2
+          ║                                                ║
+        ┌─╨─┐                                            ┌─╨─┐
+        │ 1 │                                            │ 2 │◄─┐
+        └─┬─┘                                            └─┬─┘  │
+          │                                                │    │
+          ╞════════════════Line 1-4════════════════════════╡    │
+          │                                                │    │
+        ┌─┴─┐                                            ┌─┴─┐  │
+        │ 4 │                                            │ 5 │  │ Tie to
+        └─┬─┘                                            └─┬─┘  │ Feeder A
+          │                                                │    │ (Node650)
+        ┌─┴─┐                                            ┌─┴─┐  │
+        │ 7 │══════════════Line 7-8══════════════════════│ 8 │  │
+        └─┬─┘                                            └─┬─┘  │
+          │                                                │    │
+        ┌─┴─┐                                            ┌─┴─┐  │
+        │ 9 │══════════════Line 9-6══════════════════════│ 6 │──┘
+        └───┘                                            └─┬─┘
+                                                           │
+                                                         ┌─┴─┐
+                                                         │ 3 │◄── Tie to
+                                                         └─╥─┘   Feeder B
+                                                           ║     (Node650)
+                                                          Gen3
+
+    Publications: gridpack/Va, gridpack/Vb, gridpack/Vc
+    Subscriptions: gld_hlc_conn/Sa, gld_hlc_conn/Sb, gld_hlc_conn/Sc
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                   DISTRIBUTION SYSTEM A (GRIDLAB-D)                          ║
+║                    IEEE 123-Node Feeder + 6 EVs                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+                 From Transmission Bus 2 (69 kV)
+                            │
+                     [Transformer]
+                       69kV/4.16kV
+                            │
+                      ╔═════╧═════╗
+                      ║  Node650  ║ ◄── Swing Bus (3-phase)
+                      ║  CRITICAL ║     Measured: gld_hlc_conn/Sa,Sb,Sc
+                      ╚═════╤═════╝
+                            │
+                      [Regulator]
+                            │
+              ┌─────────────┼─────────────┐
+              │             │             │
+         [Primary]    [Laterals]    [Capacitors]
+          Feeder
+              │
+    ┌─────────┼─────────┬─────────┬─────────┬─────────┬─────────┐
+    │         │         │         │         │         │         │
+  ┌─┴─┐     ┌─┴─┐     ┌─┴─┐     ┌─┴─┐     ┌─┴─┐     ┌─┴─┐
+  │l5 │     │l2 │     │l88│     │l92│     │107│     │114│     Links
+  └─┬─┘     └─┬─┘     └─┬─┘     └─┬─┘     └─┬─┘     └─┬─┘
+    │         │         │         │         │         │
+  ┌─▼──┐    ┌─▼──┐    ┌─▼──┐    ┌─▼──┐    ┌─▼──┐    ┌─▼──┐
+  │swEV│    │swEV│    │swEV│    │swEV│    │swEV│    │swEV│    Switches
+  │ 1  │    │ 2  │    │ 3  │    │ 4  │    │ 5  │    │ 6  │
+  └─┬──┘    └─┬──┘    └─┬──┘    └─┬──┘    └─┬──┘    └─┬──┘
+    │         │         │         │         │         │
+  ┌─▼──┐    ┌─▼──┐    ┌─▼──┐    ┌─▼──┐    ┌─▼──┐    ┌─▼──┐
+  │EV1 │    │EV2 │    │EV3 │    │EV4 │    │EV5 │    │EV6 │    Loads
+  │220 │    │200 │    │200 │    │220 │    │200 │    │200 │    kW
+  │kW  │    │kW  │    │kW  │    │kW  │    │kW  │    │kW  │
+  └─┬──┘    └────┘    └────┘    └─┬──┘    └────┘    └────┘
+    │                             │
+  ┌─▼──────────┐            ┌─────▼─────┐
+  │swEV1_storage│            │swEV4_storage│                   Storage
+  └─┬──────────┘            └─────┬─────┘                     Switches
+    │                             │
+  ┌─▼────────┐              ┌─────▼─────┐
+  │ Battery  │              │  Battery  │                     Batteries
+  │  EV1     │              │   EV4     │
+  └──────────┘              └───────────┘
+
+    Phase Assignments:
+    ┌────────────────────────────────────────┐
+    │ Phase A (AN): EV3, EV6                 │
+    │ Phase B (BN): EV2, EV5                 │
+    │ Phase C (CN): EV1, EV4 (with storage)  │
+    └────────────────────────────────────────┘
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                        ATTACK CONTROL ARCHITECTURE                           ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         BLUE TEAM (Legitimate)                               │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Controller: 1bc_EV_Controller.py (EVControllerSim)                         │
+│  Objective: Peak shaving, grid stability                                     │
+│  Update Rate: Every 1200 seconds (20 minutes)                               │
+│                                                                              │
+│  Logic Flow:                                                                 │
+│  ┌────────────────────────────────────────────────────────────────┐         │
+│  │ 1. Monitor feeder load (gld_hlc_conn/Sa, Sb, Sc)              │         │
+│  │ 2. Calculate total power                                       │         │
+│  │ 3. Decision:                                                   │         │
+│  │    IF load > 4.2 MW:                                           │         │
+│  │       → Open swEV1, swEV4 (disconnect from grid)               │         │
+│  │       → Close swEV1_storage, swEV4_storage (battery mode)      │         │
+│  │       → Set EV1, EV4 → 200 kW (battery powered)                │         │
+│  │       → Set EV2-6 → 0 kW (disconnected for safety)             │         │
+│  │    ELSE IF 2.6 MW < load < 4.2 MW:                             │         │
+│  │       → Mild reduction: EV1-2 → 210 kW                         │         │
+│  │    ELSE:                                                        │         │
+│  │       → Normal operation: All EVs → 200-220 kW                 │         │
+│  └────────────────────────────────────────────────────────────────┘         │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                          RED TEAM (Attacker)                                 │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Controller: ev_setpoint_mcp (ev_attacker_mcp federate)                     │
+│  Objective: Disrupt grid operation, test defenses                            │
+│  Update Rate: On-demand (AI-driven, can be continuous)                      │
+│                                                                              │
+│  Attack Capabilities:                                                        │
+│  ┌────────────────────────────────────────────────────────────────┐         │
+│  │ Observation Primitives:                                        │         │
+│  │   • get_grid_status       → Monitor voltages, powers           │         │
+│  │   • discover_topology     → Map vulnerable points              │         │
+│  │   • monitor_protection    → Track feeder limits                │         │
+│  │   • analyze_power_flow    → Understand grid constraints        │         │
+│  │                                                                 │         │
+│  │ Action Primitive:                                               │         │
+│  │   • set_ev_capacity       → Inject malicious setpoints         │         │
+│  │                                                                 │         │
+│  │ Attack Strategies:                                              │         │
+│  │   1. Overload: 2-4 MW per EV → Total > 4.2 MW                 │         │
+│  │   2. Phase Imbalance: Heavy CN, light AN/BN                    │         │
+│  │   3. Reverse Power: -500 kW injection                          │         │
+│  │   4. Storage Drain: Max load during islanding                  │         │
+│  │   5. Timing: Attack at peak demand (15:00-17:00)               │         │
+│  └────────────────────────────────────────────────────────────────┘         │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         COMPETITION MECHANISM                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+    Both controllers send messages to SAME endpoints: gld_hlc_conn/EV1-6
+
+    Time    Blue Team                      Red Team
+    ════    ════════════════════════       ════════════════════════════
+    0s      EV3 → 200 kW ─┐                (observing...)
+                           ▼
+                     gld_hlc_conn/EV3 ──► GridLAB-D: EV3 = 200 kW
+
+    900s    (waiting for 1200s cycle)      EV3 → 2500 kW ─┐
+                                                            ▼
+                                         gld_hlc_conn/EV3 ──► GridLAB-D: EV3 = 2500 kW
+                                                                         ↑
+                                                              LAST MESSAGE WINS!
+
+    1200s   EV3 → 210 kW ─┐                (continues attack)
+                           ▼
+                     gld_hlc_conn/EV3 ──► GridLAB-D: EV3 = 210 kW
+                                                         ↑
+                                          Blue team regains control
+                                          (but load already exceeded limit!)
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           MONITORING POINTS                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+    Critical Measurements:
+    ┌────────────────────────────────────────────────────────────────┐
+    │ Location: Node650 (Swing Bus)                                  │
+    │                                                                 │
+    │ Voltage (from GridPACK):                                        │
+    │   gridpack/Va, Vb, Vc → ~2401 V per phase                      │
+    │   Normal: 0.95 - 1.05 pu                                        │
+    │                                                                 │
+    │ Power (to Transmission):                                        │
+    │   gld_hlc_conn/Sa, Sb, Sc → Feeder demand                      │
+    │   Normal: ~3.0 MW total                                         │
+    │   Limit: 4.2 MW (upper), 2.6 MW (lower)                        │
+    │                                                                 │
+    │ Switch Status (from Controller):                                │
+    │   swEV1, swEV4 → CLOSED (normal) / OPEN (islanding)            │
+    │   swEV1_storage, swEV4_storage → OPEN (normal) / CLOSED (isle) │
+    └────────────────────────────────────────────────────────────────┘
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           PROTECTION SYSTEM                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+    Protection Thresholds:
+    ┌──────────────────────────────────────────┬─────────────────────┐
+    │ Feeder Load Upper Limit                  │ 4.2 MW              │
+    │ Feeder Load Lower Limit                  │ 2.6 MW              │
+    │ Undervoltage Relay Threshold             │ 0.95 pu (2281 V)    │
+    │ Overvoltage Relay Threshold              │ 1.05 pu (2522 V)    │
+    │ Controller Response Time                 │ 1200 s (20 min)     │
+    │ Attacker Response Time                   │ < 1 s (on-demand)   │
+    └──────────────────────────────────────────┴─────────────────────┘
+
+    Protection Actions:
+    ┌──────────────────────────────────────────────────────────────────┐
+    │ Trigger: Total Load > 4.2 MW                                     │
+    │ Response:                                                         │
+    │   1. Open swEV1 (disconnect EV1 from grid)                       │
+    │   2. Open swEV4 (disconnect EV4 from grid)                       │
+    │   3. Close swEV1_storage (connect EV1 to battery)                │
+    │   4. Close swEV4_storage (connect EV4 to battery)                │
+    │   5. Set EV1, EV4 → 200 kW (battery-powered)                     │
+    │   6. Set EV2, 3, 5, 6 → 0 kW (disconnected)                      │
+    │                                                                   │
+    │ Result: Grid load reduced, EV1/EV4 islanded with batteries       │
+    └──────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+
+For detailed attack strategies: ev_setpoint_mcp/ATTACK_STRATEGIES.md
+For full grid diagram: examples/2bus-13bus/GRID_DIAGRAM.md
+For quick reference: examples/2bus-13bus/QUICK_REFERENCE.txt
+
+═══════════════════════════════════════════════════════════════════════════════
