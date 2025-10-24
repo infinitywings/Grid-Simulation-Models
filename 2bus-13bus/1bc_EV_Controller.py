@@ -27,11 +27,6 @@ if __name__ == "__main__":
     logger.info("HELICS Version: {}".format(h.helicsGetVersion()))
     logger.info("{}: Federate {} has been registered".format(federate_name, federate_name))
 
-    pub_switch_EV1 = h.helicsFederateGetPublicationByIndex(fed, 0)
-    pub_grid_EV1 = h.helicsFederateGetPublicationByIndex(fed, 1)
-    pub_switch_EV4 = h.helicsFederateGetPublicationByIndex(fed, 2)  # For swEV4_storage
-    pub_grid_EV4 = h.helicsFederateGetPublicationByIndex(fed, 3)  # For swEV4
-
     endpoint_count = h.helicsFederateGetEndpointCount(fed)
     subkeys_count = h.helicsFederateGetInputCount(fed)
     endid = {}
@@ -54,8 +49,7 @@ if __name__ == "__main__":
 
     plotting = True
     hours = 24
-    #total_interval = int(60 * 60 * hours)
-    total_interval = 10
+    total_interval = int(60 * 60 * hours)
     grantedtime = -1
     update_interval = 20 * 60
     feeder_limit_upper = 4.2e6
@@ -66,7 +60,7 @@ if __name__ == "__main__":
 
     if plotting:
         ax = {}
-        fig = plt.figure(figsize=(15, 10))
+        fig = plt.figure()
         fig.subplots_adjust(hspace=0.4, wspace=0.4)
         ax['Feeder_2'] = plt.subplot(313)
         for i, name in enumerate(ev_names):
@@ -86,12 +80,14 @@ if __name__ == "__main__":
             iload_total += demand.imag
         feeder_real_power.append(rload_total)
 
+        # Initialize all EV values as NaN in case no message is received this step
         current_ev_values = {name: np.nan for name in ev_names}
 
         for i in range(endpoint_count):
             ep = endid[f"m{i}"]
             name = ev_names[i]
             latest_val = None
+
             while h.helicsEndpointHasMessage(ep):
                 msg = h.helicsEndpointGetMessage(ep)
                 try:
@@ -99,9 +95,11 @@ if __name__ == "__main__":
                 except Exception as e:
                     logger.warning(f"Could not parse message for {name}: {e}")
                     continue
+
             if latest_val is not None:
                 current_ev_values[name] = latest_val
 
+        # Store the values
         for name in ev_names:
             EV_data[name].append(current_ev_values[name])
 
@@ -109,39 +107,13 @@ if __name__ == "__main__":
         logger.info(f"{federate_name}: Load = {rload_total/1e3:.2f} kW + {iload_total/1e3:.2f} kVAr")
 
         if feeder_real_power[-1] > feeder_limit_upper:
-            h.helicsPublicationPublishString(pub_grid_EV1, "OPEN")
-            logger.info(f"{federate_name}: EV1–grid switch OPEN")
-
-            h.helicsPublicationPublishString(pub_grid_EV4, "OPEN")
-            logger.info(f"{federate_name}: EV4–grid switch OPEN")
-
             for idx in range(endpoint_count):
                 h.helicsEndpointSendBytes(endid[f"m{idx}"], '0.0+0.0j')
-            logger.info(f"{federate_name}: All EVs disconnected for islanding")
-
-            h.helicsPublicationPublishString(pub_switch_EV1, "CLOSED")
-            logger.info(f"{federate_name}: Storage switch CLOSED to island EV1")
-
-            ev1_idx = ev_names.index("EV1")
-            h.helicsEndpointSendBytes(endid[f"m{ev1_idx}"], '200000+0.0j')
-            logger.info(f"{federate_name}: EV1 powered (200 kW) by storage during overload")
-
-            h.helicsPublicationPublishString(pub_switch_EV4, "CLOSED")
-            logger.info(f"{federate_name}: Storage switch CLOSED to island EV4")
-
-            ev4_idx = ev_names.index("EV4")
-            h.helicsEndpointSendBytes(endid[f"m{ev4_idx}"], '200000+0.0j')
-            logger.info(f"{federate_name}: EV4 powered (200 kW) by storage during overload")
-
+            logger.info(f"{federate_name}: Overload action executed")
         elif feeder_limit_lower < feeder_real_power[-1] < feeder_limit_upper:
-            h.helicsPublicationPublishString(pub_switch_EV1, "OPEN")
-            h.helicsPublicationPublishString(pub_switch_EV4, "OPEN")
-            logger.info(f"{federate_name}: Storage switches OPEN — normal operation")
-
             for idx in range(2):
                 h.helicsEndpointSendBytes(endid[f"m{idx}"], '210000+0.0j')
             logger.info(f"{federate_name}: Safe range action executed")
-
         else:
             for idx in range(endpoint_count):
                 h.helicsEndpointSendBytes(endid[f"m{idx}"], '200000+0.0j')
@@ -149,13 +121,9 @@ if __name__ == "__main__":
 
         if plotting:
             ax['Feeder_2'].clear()
-            feeder_mw = np.array(feeder_real_power) / 1e6
-            ax['Feeder_2'].plot(time_sim, feeder_mw, label="Feeder Load")
-            ax['Feeder_2'].axhline(feeder_limit_upper / 1e6, color='r', linestyle='--', label='Upper L')
-            ax['Feeder_2'].axhline(feeder_limit_lower / 1e6, color='black', linestyle='--', label='Lower L')
+            ax['Feeder_2'].plot(time_sim, np.array(feeder_real_power)/1e6)
             ax['Feeder_2'].set_ylabel("Feeder Load (MW)")
-            ax['Feeder_2'].set_xlabel("Time (H)")
-            ax['Feeder_2'].legend()
+            ax['Feeder_2'].set_xlabel("Time (Hours)")
             ax['Feeder_2'].grid()
 
             for name in ev_names:
@@ -163,9 +131,9 @@ if __name__ == "__main__":
                 ax[name].plot(time_sim, EV_data[name])
                 ax[name].set_title(name)
                 ax[name].set_ylabel("EV Output (kW)")
-                ax[name].set_xlabel("Time (H)")
+                ax[name].set_xlabel("Time (Hours)")
                 ax[name].grid()
-            plt.tight_layout()
+
             plt.show(block=False)
             plt.pause(0.01)
 
@@ -174,8 +142,6 @@ if __name__ == "__main__":
         df["time"] = time_sim
         df["feeder_load_W"] = feeder_real_power
         df.to_csv("1c_EV_Outputs.csv", index=False)
-        fig.savefig("1c_EV_Outputs.png", dpi=300)
-        logger.info("Saved feeder and EV output plots as 1c_EV_Outputs.png")
 
     logger.info(f"{federate_name}: Finished time loop, finalizing federate.")
     destroy_federate(fed)
