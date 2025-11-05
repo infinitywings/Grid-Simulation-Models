@@ -12,7 +12,7 @@ clock {
 //#include "include/schedules/ev5_load_schedule.csv
 #define stylesheet=http://gridlab-d.svn.sourceforge.net/viewvc/gridlab-d/trunk/core/gridlabd-2_0
 
-#set minimum_timestep=120.000000;
+#set minimum_timestep=60.000000;
 #set profiler=1;
 #set relax_naming_rules=1;
 #set randomseed=10;
@@ -849,6 +849,7 @@ object overhead_line {
     configuration lc1001;
     groupid Distribution_Line;
 };
+
 
 object overhead_line {
     phases "AN";
@@ -3315,7 +3316,7 @@ object load {
     voltage_A 2401.7771;
     voltage_B -1200.8886-2080.000j;
     voltage_C -1200.8886+2080.000j;
-    constant_power_A 40000+20000j;
+    constant_power_A 190000+20000j;
     nominal_voltage 2401.7771;
 };
 
@@ -3797,9 +3798,9 @@ object load {
     voltage_A 2401.7771;
     voltage_B -1200.8886-2080.000j;
     voltage_C -1200.8886+2080.000j;
-    constant_power_A 35000+25000j;
-    constant_power_B 70000+50000j;
-    constant_power_C 35000+25000j;
+    constant_power_A 95000+25000j;
+    constant_power_B 90000+50000j;
+    constant_power_C 95000+25000j;
     nominal_voltage 2401.7771;
 };
 ////////////////////////////////////////////////////////////////////////////
@@ -7992,8 +7993,8 @@ object load {
     voltage_B -1200.8886-2080.000j;
     voltage_C -1200.8886+2080.000j;
     nominal_voltage 2401.7771;
-    constant_power_A ev6_player.value;
-    //constant_power_A 210000+0j;
+    //constant_power_A ev6_player.value;
+    constant_power_A 210000+0j;
     object recorder {
         property constant_power_A, voltage_A,measured_frequency_A;
         interval 1200;
@@ -8027,8 +8028,8 @@ object load {
     voltage_B -1200.8886-2080.000j;
     voltage_C -1200.8886+2080.000j;
     nominal_voltage 2401.7771;
-    constant_power_B ev5_player.value;
-    //constant_power_B 200000+0j;
+    //constant_power_B ev5_player.value;
+    constant_power_B 200000+0j;
     object recorder {
         property measured_voltage_B,constant_power_B,measured_frequency_B;
         interval 1200;
@@ -8061,8 +8062,8 @@ object load {
     voltage_B -1200.8886-2080.000j;
     voltage_C -1200.8886+2080.000j;
     nominal_voltage 2401.7771;
-    constant_power_C ev4_player.value;
-    //constant_power_C 200000+0j;
+    //constant_power_C ev4_player.value;
+    constant_power_C 200000+0j;
     object recorder {
         property measured_voltage_C,constant_power_C,measured_frequency_C;
         interval 1200;
@@ -8162,8 +8163,8 @@ object load {
     voltage_B -1200.8886-2080.000j;
     voltage_C -1200.8886+2080.000j;
     nominal_voltage 2401.7771;
-    constant_power_A ev3_player.value;
-//    constant_power_A 200000+0j;
+//    constant_power_A ev3_player.value;
+    constant_power_A 200000+0j;
     object recorder {
         property measured_voltage_A,constant_power_A,measured_frequency_A;
         interval 1200;
@@ -8203,8 +8204,8 @@ object load {
     voltage_B -1200.8886-2080.000j;
     voltage_C -1200.8886+2080.000j;
     nominal_voltage 2401.7771;
-    constant_power_B ev2_player.value;
-//    constant_power_B 200000+0j;
+    //constant_power_B ev2_player.value;
+    constant_power_B 200000+0j;
     object recorder {
         property measured_voltage_B,constant_power_B,measured_frequency_B;
         interval 1200;
@@ -8245,8 +8246,8 @@ object load {
     voltage_B -1200.8886-2080.000j;
     voltage_C -1200.8886+2080.000j;
     nominal_voltage 2401.7771;
-    //constant_power_C 200000+0j;
-    constant_power_C ev1_player.value;
+    constant_power_C 200000+0j;
+    //constant_power_C ev1_player.value;
     object recorder {
         property measured_voltage_C,constant_power_C,measured_frequency_C;
         interval 1200;
