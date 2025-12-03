@@ -1,0 +1,67 @@
+
+WARNING  [INIT] : switch objects may not behave properly under FBS!
+Processing 2013-08-28 00:10:00 PST...                                      Processing 2013-08-28 06:30:00 PST...                                      Processing 2013-08-28 12:04:00 PST...WARNING  [2013-08-28 14:06:00 PST] : last warning message was repeated 15 times
+WARNING  [2013-08-28 14:06:00 PST] : Regulator reg1606701 has phase A at the maximum tap value
+                                      Processing 2013-08-28 16:54:00 PST...                                      Processing 2013-08-28 22:22:00 PST...
+FATAL    [2013-08-28 23:00:00 PST] : Invalid time of day provided in datetime
+
+FATAL    [2013-08-29 00:00:00 PST] : last fatal error message was repeated 2 times
+
+
+Core profiler results
+======================
+
+Total objects                806 objects
+Parallelism                    1 thread
+Total time                   6.0 seconds
+  Core time                  2.1 seconds (35.4%)
+    Compiler                 2.1 seconds (34.5%)
+    Instances                0.0 seconds (0.0%)
+    Random variables         0.0 seconds (0.0%)
+    Schedules                0.0 seconds (0.0%)
+    Loadshapes               0.0 seconds (0.0%)
+    Enduses                  0.0 seconds (0.0%)
+    Transforms               0.0 seconds (0.1%)
+  Model time                 3.9 seconds/thread (64.6%)
+Simulation time                1 days
+Simulation speed             3.2k object.hours/second
+Passes completed            2429 passes
+Time steps completed         722 timesteps
+Convergence efficiency      3.36 passes/timestep
+Read lock contention        0.0%
+Write lock contention       0.0%
+Average timestep            120 seconds/timestep
+Simulation rate           14400 x realtime
+
+
+Model profiler results
+======================
+
+Class            Time (s) Time (%) msec/obj
+---------------- -------- -------- --------
+triplex_node       0.610     15.7%      3.9
+load               0.588     15.2%      6.5
+overhead_line      0.556     14.3%      4.9
+triplex_load       0.438     11.3%      5.5
+transformer        0.397     10.2%      4.9
+triplex_line       0.379      9.8%      4.8
+triplex_meter      0.348      9.0%      4.4
+node               0.208      5.4%      4.3
+helics_msg         0.125      3.2%    124.8
+switch             0.088      2.3%      5.5
+climate            0.045      1.2%     45.2
+regulator          0.029      0.8%      7.3
+underground_line   0.025      0.6%      5.0
+capacitor          0.020      0.5%      5.0
+meter              0.011      0.3%      5.4
+player             0.006      0.1%      1.4
+voltdump           0.002      0.0%      1.9
+recorder           0.001      0.0%      1.4
+transformer_conf   0.000      0.0%      0.0
+line_spacing       0.000      0.0%      0.0
+underground_line   0.000      0.0%      0.0
+regulator_config   0.000      0.0%      0.0
+================ ======== ======== ========
+Total              3.876    100.0%      4.8
+
+WARNING  [2013-08-29 00:00:00 PST] : last warning message was repeated 347 times

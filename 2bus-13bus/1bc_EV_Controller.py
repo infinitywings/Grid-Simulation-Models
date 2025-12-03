@@ -76,10 +76,10 @@ if __name__ == "__main__":
     hours = 24
     total_interval = int(60 * 60 * hours)
     grantedtime = -1
-    update_interval = 20 * 60  # EV control interval (20 minutes)
+    update_interval = 1 * 60  # EV control interval (1 minute)
 
     # Feeder limits (W)
-    feeder_limit_upper = 3.2e6
+    feeder_limit_upper = 4.5e6
     feeder_limit_lower = 2.6e6
 
     # Data storage

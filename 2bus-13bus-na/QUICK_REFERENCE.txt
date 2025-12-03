@@ -1,0 +1,133 @@
+═══════════════════════════════════════════════════════════════════════════════
+  2BUS-13BUS GRID SIMULATION - QUICK REFERENCE
+═══════════════════════════════════════════════════════════════════════════════
+
+SYSTEM ARCHITECTURE
+═══════════════════
+
+    Transmission (9-bus) ──┬── Feeder A (123-node) + 6 EVs ← CONTROLLABLE
+                           └── Feeder B (123-node)         ← Not controlled
+
+FEEDER A - EV CHARGING STATIONS
+════════════════════════════════
+
+    ┌────┬──────┬───────┬─────────┬──────────┬────────────┬────────────┐
+    │ EV │ Link │ Phase │ Storage │ Normal   │ Attack Max │ Switch     │
+    ├────┼──────┼───────┼─────────┼──────────┼────────────┼────────────┤
+    │ 1  │ l5   │ CN    │ YES     │ 220 kW   │ 4 MW       │ swEV1      │
+    │ 2  │ l2   │ BN    │ NO      │ 200 kW   │ 4 MW       │ swEV2      │
+    │ 3  │ l88  │ AN    │ NO      │ 200 kW   │ 4 MW       │ swEV3      │
+    │ 4  │ l92  │ CN    │ YES     │ 220 kW   │ 4 MW       │ swEV4      │
+    │ 5  │ l107 │ BN    │ NO      │ 200 kW   │ 4 MW       │ swEV5      │
+    │ 6  │ l114 │ AN    │ NO      │ 200 kW   │ 4 MW       │ swEV6      │
+    └────┴──────┴───────┴─────────┴──────────┴────────────┴────────────┘
+
+HELICS PUBLICATIONS & SUBSCRIPTIONS
+════════════════════════════════════
+
+GridLAB-D (IEEE13bus_fed):
+    PUBLISHES: gld_hlc_conn/Sa, Sb, Sc (Node650 power)
+    SUBSCRIBES: gridpack/Va, Vb, Vc (transmission voltage)
+                swEV1, swEV4, swEV1_storage, swEV4_storage (switches)
+
+GridPACK (gridpack):
+    PUBLISHES: gridpack/Va, Vb, Vc (transmission voltages)
+    SUBSCRIBES: gld_hlc_conn/Sa, Sb, Sc (feeder power demand)
+
+Legitimate Controller (EVControllerSim):
+    PUBLISHES: swEV1, swEV4, swEV1_storage, swEV4_storage (switches)
+               EV_Controller/EV1-6 → gld_hlc_conn/EV1-6 (setpoints)
+    SUBSCRIBES: gld_hlc_conn/Sa, Sb, Sc (feeder load monitoring)
+
+Attack MCP (ev_attacker_mcp):
+    PUBLISHES: attacker/EV1-6 → gld_hlc_conn/EV1-6 (malicious setpoints)
+    SUBSCRIBES: gld_hlc_conn/Sa, Sb, Sc (feeder load)
+                gridpack/Va, Vb, Vc (voltages)
+                swEV1, swEV4, etc. (switch status)
+
+EV ENDPOINTS (Bidirectional)
+═════════════════════════════
+
+    GridLAB-D ←→ gld_hlc_conn/EV1 ←─ EV_Controller/EV1 (legitimate)
+              ↖                    ↖─ attacker/EV1 (malicious)
+                 COMPETING MESSAGES - LAST ONE WINS!
+
+PROTECTION LIMITS
+═════════════════
+
+    Feeder Load Upper Limit: 4.2 MW  (trigger islanding)
+    Feeder Load Lower Limit: 2.6 MW
+    Voltage Range: 0.95 - 1.05 pu (per-unit)
+    Nominal Voltage: 2401.7771 V (line-to-neutral)
+
+ATTACK STRATEGIES
+═════════════════
+
+    1. OVERLOAD: Inject 2-4 MW per EV → Total > 4.2 MW
+    2. PHASE IMBALANCE: Heavy on CN, light on AN/BN
+    3. REVERSE POWER: Negative setpoints (-500 kW)
+    4. STORAGE DRAIN: Max load on EV1/EV4 during islanding
+    5. TIMING: Attack during peak hours (15:00-17:00)
+
+NORMAL OPERATION FLOW
+══════════════════════
+
+    Time 0s:     Controller monitors load (~3.0 MW)
+    Time 1200s:  Load increases to 3.5 MW → mild adjustment
+    Time 2400s:  Load > 4.2 MW → TRIGGER ISLANDING
+                 - Open swEV1, swEV4 (disconnect from grid)
+                 - Close swEV1_storage, swEV4_storage (battery mode)
+                 - EV1, EV4 powered by batteries
+                 - EV2, 3, 5, 6 disconnected
+
+ATTACK OPERATION FLOW
+══════════════════════
+
+    Time 0s:     Attacker observes (~3.0 MW)
+    Time 900s:   Attacker detects peak approaching (3.8 MW)
+                 ATTACK: EV3 → 2500 kW, EV5 → 2000 kW
+                 Total: 3.8 + 2.5 + 2.0 = 8.3 MW (OVERLOAD!)
+    Time 920s:   Controller triggers islanding (too late?)
+                 Attacker drains batteries: EV1, EV4 → 220 kW each
+    Time 1800s:  Batteries depleted, EVs lose power
+
+DOCKER COMMANDS
+═══════════════
+
+    Start simulation:
+    $ docker-compose -f docker/docker-compose.demo.yml up -d
+
+    Start attack MCP:
+    $ docker-compose -f ev_setpoint_mcp/docker/docker-compose.ev-mcp.yml up -d
+
+    Monitor logs:
+    $ docker logs -f IEEE13bus_fed        # GridLAB-D
+    $ docker logs -f gridpack             # GridPACK
+    $ docker logs -f 1c_Controller        # Legitimate controller
+    $ docker logs -f ev-setpoint-mcp      # Attack MCP
+
+API COMMANDS
+════════════
+
+    Observe grid:
+    $ curl http://localhost:5100/primitive \
+      -d '{"method":"get_grid_status","params":{}}'
+
+    Attack (overload):
+    $ curl http://localhost:5100/primitive \
+      -d '{"method":"set_ev_capacity","params":{"ev_id":"EV3","real_power_kw":2500}}'
+
+KEY FILES
+═════════
+
+    Grid model:         examples/2bus-13bus/1c_IEEE_123_feeder.glm
+    HELICS config:      examples/2bus-13bus/mainglm.json
+    Controller:         examples/2bus-13bus/1bc_EV_Controller.py
+    Simulation runner:  examples/2bus-13bus/gpk-gld-cosim.json
+    MCP config:         ev_setpoint_mcp/config/ev_mcp.yaml
+    Full diagram:       examples/2bus-13bus/GRID_DIAGRAM.md
+
+═══════════════════════════════════════════════════════════════════════════════
+For detailed diagrams, see GRID_DIAGRAM.md
+For attack strategies, see ev_setpoint_mcp/ATTACK_STRATEGIES.md
+═══════════════════════════════════════════════════════════════════════════════

@@ -52,7 +52,7 @@ if __name__ == "__main__":
     #total_interval = int(60 * 60 * hours)
     total_interval = 1
     grantedtime = -1
-    update_interval = 20 * 60
+    update_interval = 1 * 60
     feeder_limit_upper = 4.2e6
     feeder_limit_lower = 2.6e6
     EV_data = {name: [] for name in ev_names}

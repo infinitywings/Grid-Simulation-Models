@@ -1,0 +1,229 @@
+HELICS Version: 3.6.1 (2025-02-24)
+EVControllerSim: Federate EVControllerSim has been registered
+EVControllerSim: Registered Endpoint ---> EV6
+EVControllerSim: Registered Endpoint ---> EV5
+EVControllerSim: Registered Endpoint ---> EV4
+EVControllerSim: Registered Endpoint ---> EV3
+EVControllerSim: Registered Endpoint ---> EV2
+EVControllerSim: Registered Endpoint ---> EV1
+EVControllerSim: Registered Subscription ---> gld_hlc_conn/Sa
+EVControllerSim: Registered Subscription ---> gld_hlc_conn/Sb
+EVControllerSim: Registered Subscription ---> gld_hlc_conn/Sc
+EVControllerSim: Granted Time = 60.0
+EVControllerSim: Load = 2142.38 kW + 889.51 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 1200.0
+EVControllerSim: Load = 2130.55 kW + 885.54 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 2400.0
+EVControllerSim: Load = 1704.89 kW + 856.56 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 3600.0
+EVControllerSim: Load = 1673.81 kW + 847.31 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 4800.0
+EVControllerSim: Load = 1642.48 kW + 843.59 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 6000.0
+EVControllerSim: Load = 1624.70 kW + 838.46 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 7200.0
+EVControllerSim: Load = 1615.39 kW + 835.77 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 8400.0
+EVControllerSim: Load = 1597.45 kW + 834.46 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 9600.0
+EVControllerSim: Load = 1597.97 kW + 834.61 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 10800.0
+EVControllerSim: Load = 1585.05 kW + 830.90 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 12000.0
+EVControllerSim: Load = 1607.82 kW + 833.59 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 13200.0
+EVControllerSim: Load = 1596.78 kW + 830.41 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 14400.0
+EVControllerSim: Load = 1616.50 kW + 836.09 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 15600.0
+EVControllerSim: Load = 1670.22 kW + 834.03 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 16800.0
+EVControllerSim: Load = 1695.98 kW + 841.76 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 18000.0
+EVControllerSim: Load = 1718.27 kW + 848.23 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 19200.0
+EVControllerSim: Load = 1824.81 kW + 849.27 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 20400.0
+EVControllerSim: Load = 1853.23 kW + 857.82 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 21600.0
+EVControllerSim: Load = 1886.22 kW + 867.54 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 22800.0
+EVControllerSim: Load = 2074.21 kW + 893.04 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 24000.0
+EVControllerSim: Load = 2102.04 kW + 901.39 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 25200.0
+EVControllerSim: Load = 2140.59 kW + 913.01 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 26400.0
+EVControllerSim: Load = 2529.69 kW + 968.98 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 27600.0
+EVControllerSim: Load = 2612.60 kW + 995.21 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 28800.0
+EVControllerSim: Load = 2708.48 kW + 1026.01 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 30000.0
+EVControllerSim: Load = 2867.86 kW + 1074.46 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 31200.0
+EVControllerSim: Load = 2989.19 kW + 1114.12 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 32400.0
+EVControllerSim: Load = 3071.89 kW + 1141.41 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 33600.0
+EVControllerSim: Load = 3218.69 kW + 1188.94 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 34800.0
+EVControllerSim: Load = 3231.42 kW + 1193.19 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 36000.0
+EVControllerSim: Load = 3437.07 kW + 1263.27 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 37200.0
+EVControllerSim: Load = 3571.35 kW + 1300.06 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 38400.0
+EVControllerSim: Load = 3680.21 kW + 1337.93 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 39600.0
+EVControllerSim: Load = 3715.38 kW + 1350.19 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 40800.0
+EVControllerSim: Load = 3515.90 kW + 1396.12 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 42000.0
+EVControllerSim: Load = 3508.97 kW + 1393.48 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 43200.0
+EVControllerSim: Load = 3691.71 kW + 1459.68 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 44400.0
+EVControllerSim: Load = 3843.33 kW + 1520.23 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 45600.0
+EVControllerSim: Load = 3844.64 kW + 1520.51 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 46800.0
+EVControllerSim: Load = 4013.65 kW + 1582.52 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 48000.0
+EVControllerSim: Load = 3593.42 kW + 1491.07 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 49200.0
+EVControllerSim: Load = 3648.66 kW + 1510.24 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 50400.0
+EVControllerSim: Load = 3575.70 kW + 1484.12 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 51600.0
+EVControllerSim: Load = 4031.98 kW + 1516.26 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 52800.0
+EVControllerSim: Load = 4172.60 kW + 1566.47 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 54000.0
+EVControllerSim: Load = 4206.55 kW + 1578.90 kVAr
+EVControllerSim: Overload action executed
+EVControllerSim: Granted Time = 55200.0
+EVControllerSim: Load = 3996.92 kW + 1502.94 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 56400.0
+EVControllerSim: Load = 4118.23 kW + 1545.87 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 57600.0
+EVControllerSim: Load = 4009.34 kW + 1507.30 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 58800.0
+EVControllerSim: Load = 4199.82 kW + 1575.82 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 60000.0
+EVControllerSim: Load = 4038.95 kW + 1518.67 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 61200.0
+EVControllerSim: Load = 3795.68 kW + 1432.50 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 62400.0
+EVControllerSim: Load = 4039.57 kW + 1449.10 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 63600.0
+EVControllerSim: Load = 4017.78 kW + 1441.39 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 64800.0
+EVControllerSim: Load = 3955.04 kW + 1418.87 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 66000.0
+EVControllerSim: Load = 3770.23 kW + 1376.21 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 67200.0
+EVControllerSim: Load = 3684.23 kW + 1345.33 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 68400.0
+EVControllerSim: Load = 3353.88 kW + 1230.64 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 69600.0
+EVControllerSim: Load = 3096.97 kW + 1181.15 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 70800.0
+EVControllerSim: Load = 3078.60 kW + 1175.62 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 72000.0
+EVControllerSim: Load = 2846.49 kW + 1099.03 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 73200.0
+EVControllerSim: Load = 2791.94 kW + 1098.34 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 74400.0
+EVControllerSim: Load = 2781.49 kW + 1094.98 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 75600.0
+EVControllerSim: Load = 2827.18 kW + 1109.77 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 76800.0
+EVControllerSim: Load = 2605.24 kW + 1047.68 kVAr
+EVControllerSim: Safe range action executed
+EVControllerSim: Granted Time = 78000.0
+EVControllerSim: Load = 2537.62 kW + 1026.27 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 79200.0
+EVControllerSim: Load = 2494.49 kW + 1012.67 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 80400.0
+EVControllerSim: Load = 2341.58 kW + 985.79 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 81600.0
+EVControllerSim: Load = 2275.55 kW + 964.96 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 82800.0
+EVControllerSim: Load = 2314.68 kW + 977.44 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 84000.0
+EVControllerSim: Load = 2144.61 kW + 969.23 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Granted Time = 85200.0
+EVControllerSim: Load = 2159.00 kW + 973.95 kVAr
+EVControllerSim: Low-load action executed
+EVControllerSim: Finished time loop, finalizing federate.
+Federate finalized

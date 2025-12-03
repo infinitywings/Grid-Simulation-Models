@@ -1,0 +1,73 @@
+
+WARNING  [INIT] : switch objects may not behave properly under FBS!
+WARNING  [INIT] : last warning message was repeated 12 times
+WARNING  [INIT] : storage_EV4 (id:805) is parented to a node, but has a link running into it!
+WARNING  [INIT] : switch objects may not behave properly under FBS!
+WARNING  [INIT] : v_max was not given -- using default value (battery: 808)
+WARNING  [INIT] : switch objects may not behave properly under FBS!
+WARNING  [INIT] : last warning message was repeated 2 times
+WARNING  [INIT] : storage_EV1 (id:822) is parented to a node, but has a link running into it!
+WARNING  [INIT] : switch objects may not behave properly under FBS!
+WARNING  [INIT] : v_max was not given -- using default value (battery: 825)
+WARNING  [2013-08-28 00:01:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:01:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:01:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:01:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+Processing 2013-08-28 00:01:00 PST...WARNING  [2013-08-28 00:02:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:02:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:02:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:02:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:04:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:04:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:04:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:04:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:06:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:06:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:06:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:06:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:08:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:08:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:08:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:08:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:10:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:10:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:10:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:10:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:12:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:12:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:12:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:12:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:14:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:14:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:14:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:14:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:16:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:16:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:16:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:16:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:18:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:18:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:18:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:18:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:20:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:20:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:20:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:20:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:22:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:22:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:22:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:22:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:24:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:24:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:24:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:24:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:26:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:26:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:26:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:26:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:28:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:28:00 PST] : inverter:battery_inv_EV1 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:28:00 PST] : inverter:battery_inv_EV4 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARNING  [2013-08-28 00:28:00 PST] : inverter:battery_inv_EV4 - discharge_off_threshold should be larger than the charge_off_threshold
+WARNING  [2013-08-28 00:30:00 PST] : inverter:battery_inv_EV1 - discharge_on_threshold and discharge_off_threshold are equal - may not behave properly!
+WARN

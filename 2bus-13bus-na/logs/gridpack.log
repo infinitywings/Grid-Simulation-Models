@@ -1,0 +1,3394 @@
+HELICS GridPAKC Federate created successfully.
+[2025-10-25 16:28:33.367] [console] [info] gridpack::registering Input 
+[2025-10-25 16:28:33.367] [console] [info] gridpack::registering Input 
+[2025-10-25 16:28:33.367] [console] [info] gridpack::registering Input 
+[2025-10-25 16:28:33.367] [console] [info] gridpack::registering Input 
+[2025-10-25 16:28:33.367] [console] [info] gridpack::registering Input 
+[2025-10-25 16:28:33.367] [console] [info] gridpack::registering Input 
+hwloc/linux: Ignoring PCI device with non-16bit domain.
+Pass --enable-32bits-pci-domain to configure to support such devices
+(warning: it would break the library ABI, don't enable unless really needed).
+hwloc/linux: Ignoring PCI device with non-16bit domain.
+Pass --enable-32bits-pci-domain to configure to support such devices
+(warning: it would break the library ABI, don't enable unless really needed).
+
+GridPACK math module configured on 1 processors
+[2025-10-25 16:28:35.235] [console] [debug] gridpack (131072)[initializing]::Granting Initialization
+[2025-10-25 16:28:35.235] [console] [debug] gridpack (131072)[initializing]::Granted Time=-9223372036.854776
+[2025-10-25 16:28:35.245] [console] [debug] gridpack (131072)[initializing]::receive PUBLICATION pub:From (131077) handle(9) size 0 at 0 to 131072 from gld_hlc_conn_2/Sa
+[2025-10-25 16:28:35.245] [console] [debug] gridpack (131072)[initializing]::receive PUBLICATION pub:From (131077) handle(10) size 0 at 0 to 131072 from gld_hlc_conn_2/Sb
+[2025-10-25 16:28:35.245] [console] [debug] gridpack (131072)[initializing]::receive PUBLICATION pub:From (131077) handle(11) size 0 at 0 to 131072 from gld_hlc_conn_2/Sc
+[2025-10-25 16:28:35.245] [console] [debug] gridpack (131072)[initializing]::receive PUBLICATION pub:From (131076) handle(6) size 0 at 0 to 131072 from gld_hlc_conn/Sa
+[2025-10-25 16:28:35.245] [console] [debug] gridpack (131072)[initializing]::receive PUBLICATION pub:From (131076) handle(7) size 0 at 0 to 131072 from gld_hlc_conn/Sb
+[2025-10-25 16:28:35.245] [console] [debug] gridpack (131072)[initializing]::receive PUBLICATION pub:From (131076) handle(8) size 0 at 0 to 131072 from gld_hlc_conn/Sc
+[2025-10-25 16:28:35.245] [console] [debug] gridpack (131072)[executing]::Granting Execution
+[2025-10-25 16:28:35.245] [console] [debug] gridpack (131072)[0]::Granted Time=0
+GridPACK Federate has entered execution mode.
+[2025-10-25 16:28:35.245] [console] [debug] gridpack[0]::setting value for gridpack/Va size 24
+[2025-10-25 16:28:35.245] [console] [debug] gridpack[0]::setting value for gridpack/Vb size 24
+[2025-10-25 16:28:35.245] [console] [debug] gridpack[0]::setting value for gridpack/Vc size 24
+[2025-10-25 16:28:35.245] [console] [debug] gridpack[0]::setting value for gridpack/Va_2 size 24
+[2025-10-25 16:28:35.245] [console] [debug] gridpack[0]::setting value for gridpack/Vb_2 size 24
+[2025-10-25 16:28:35.245] [console] [debug] gridpack[0]::setting value for gridpack/Vc_2 size 24
+[2025-10-25 16:28:35.245] [console] [debug] gridpack (131072)[5]::Granted Time=5
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+Network filename: (Tr2bus.raw)
+Using V23 parser
+0: I have 9 buses and 9 branches
+Process: 0 NBUS: 9 NBRANCH: 9
+
+Maximum number of iterations: 50
+
+Convergence tolerance: 0.000001
+
+Iteration 0
+
+Calling solver
+KSP Object: (fasz_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (fasz_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+KSP Object: (fasz_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (fasz_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+
+Iteration 1 Tol: 1.669207e-10
+
+   Branch Power Flow
+
+        Bus 1       Bus 2   CKT         P                    Q
+          1           4     BL      67.000000            70.107590
+          2           8     BL     163.000000            60.286770
+          3           6     BL      85.000000            42.023445
+          4           5     BL      28.563754            22.413053
+          4           9     BL      38.436246            42.686450
+          5           6     BL     -61.436246            -8.795226
+          6           7     BL      23.563754            21.421496
+          7           8     BL     -76.436246           -14.595613
+          8           9     BL      86.563754            23.207116
+
+   Bus Voltages and Phase Angles
+
+   Bus Number      Phase Angle      Voltage Magnitude
+          1          0.000000             1.040000
+          2         10.030094             1.025330
+          3          5.215786             1.025360
+          4         -2.122655             1.001859
+          5         -3.653829             0.981627
+          6          2.438380             1.002521
+          7          1.054850             0.981268
+          8          4.290805             0.993562
+          9         -4.056826             0.966193
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+Network filename: (Tr2bus.raw)
+Using V23 parser
+0: I have 9 buses and 9 branches
+Process: 0 NBUS: 9 NBRANCH: 9
+
+Maximum number of iterations: 50
+
+Convergence tolerance: 0.000001
+
+Iteration 0
+
+Calling solver
+KSP Object: (vpgm_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (vpgm_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+KSP Object: (vpgm_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (vpgm_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+
+Iteration 1 Tol: 1.669207e-10
+
+   Branch Power Flow
+
+        Bus 1       Bus 2   CKT         P                    Q
+          1           4     BL      67.000000            70.107590
+          2           8     BL     163.000000            60.286770
+          3           6     BL      85.000000            42.023445
+          4           5     BL      28.563754            22.413053
+          4           9     BL      38.436246            42.686450
+          5           6     BL     -61.436246            -8.795226
+          6           7     BL      23.563754            21.421496
+          7           8     BL     -76.436246           -14.595613
+          8           9     BL      86.563754            23.207116
+
+   Bus Voltages and Phase Angles
+
+   Bus Number      Phase Angle      Voltage Magnitude
+          1          0.000000             1.040000
+          2         10.030094             1.025330
+          3          5.215786             1.025360
+          4         -2.122655             1.001859
+          5         -3.653829             0.981627
+          6          2.438380             1.002521
+          7          1.054850             0.981268
+          8          4.290805             0.993562
+          9         -4.056826             0.966193
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+Network filename: (Tr2bus.raw)
+Using V23 parser
+0: I have 9 buses and 9 branches
+Process: 0 NBUS: 9 NBRANCH: 9
+
+Maximum number of iterations: 50
+
+Convergence tolerance: 0.000001
+
+Iteration 0
+
+Calling solver
+KSP Object: (vbbx_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (vbbx_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+KSP Object: (vbbx_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (vbbx_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+
+Iteration 1 Tol: 1.669207e-10
+
+   Branch Power Flow
+
+        Bus 1       Bus 2   CKT         P                    Q
+          1           4     BL      67.000000            70.107590
+          2           8     BL     163.000000            60.286770
+          3           6     BL      85.000000            42.023445
+          4           5     BL      28.563754            22.413053
+          4           9     BL      38.436246            42.686450
+          5           6     BL     -61.436246            -8.795226
+          6           7     BL      23.563754            21.421496
+          7           8     BL     -76.436246           -14.595613
+          8           9     BL      86.563754            23.207116
+
+   Bus Voltages and Phase Angles
+
+   Bus Number      Phase Angle      Voltage Magnitude
+          1          0.000000             1.040000
+          2         10.030094             1.025330
+          3          5.215786             1.025360
+          4         -2.122655             1.001859
+          5         -3.653829             0.981627
+          6          2.438380             1.002521
+          7          1.054850             0.981268
+          8          4.290805             0.993562
+          9         -4.056826             0.966193
+[2025-10-25 16:28:35.255] [console] [debug] gridpack[5]::setting value for gridpack/Va size 24
+[2025-10-25 16:28:35.255] [console] [debug] gridpack[5]::setting value for gridpack/Vb size 24
+[2025-10-25 16:28:35.255] [console] [debug] gridpack[5]::setting value for gridpack/Vc size 24
+[2025-10-25 16:28:35.255] [console] [debug] gridpack[5]::setting value for gridpack/Va_2 size 24
+[2025-10-25 16:28:35.255] [console] [debug] gridpack[5]::setting value for gridpack/Vb_2 size 24
+[2025-10-25 16:28:35.255] [console] [debug] gridpack[5]::setting value for gridpack/Vc_2 size 24
+[2025-10-25 16:28:35.255] [console] [debug] gridpack (131072)[10]::Granted Time=10
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+Network filename: (Tr2bus.raw)
+Using V23 parser
+0: I have 9 buses and 9 branches
+Process: 0 NBUS: 9 NBRANCH: 9
+
+Maximum number of iterations: 50
+
+Convergence tolerance: 0.000001
+
+Iteration 0
+
+Calling solver
+KSP Object: (imqi_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (imqi_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+KSP Object: (imqi_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (imqi_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+
+Iteration 1 Tol: 1.669207e-10
+
+   Branch Power Flow
+
+        Bus 1       Bus 2   CKT         P                    Q
+          1           4     BL      67.000000            70.107590
+          2           8     BL     163.000000            60.286770
+          3           6     BL      85.000000            42.023445
+          4           5     BL      28.563754            22.413053
+          4           9     BL      38.436246            42.686450
+          5           6     BL     -61.436246            -8.795226
+          6           7     BL      23.563754            21.421496
+          7           8     BL     -76.436246           -14.595613
+          8           9     BL      86.563754            23.207116
+
+   Bus Voltages and Phase Angles
+
+   Bus Number      Phase Angle      Voltage Magnitude
+          1          0.000000             1.040000
+          2         10.030094             1.025330
+          3          5.215786             1.025360
+          4         -2.122655             1.001859
+          5         -3.653829             0.981627
+          6          2.438380             1.002521
+          7          1.054850             0.981268
+          8          4.290805             0.993562
+          9         -4.056826             0.966193
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+Network filename: (Tr2bus.raw)
+Using V23 parser
+0: I have 9 buses and 9 branches
+Process: 0 NBUS: 9 NBRANCH: 9
+
+Maximum number of iterations: 50
+
+Convergence tolerance: 0.000001
+
+Iteration 0
+
+Calling solver
+KSP Object: (rliz_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (rliz_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+KSP Object: (rliz_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (rliz_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+
+Iteration 1 Tol: 1.669207e-10
+
+   Branch Power Flow
+
+        Bus 1       Bus 2   CKT         P                    Q
+          1           4     BL      67.000000            70.107590
+          2           8     BL     163.000000            60.286770
+          3           6     BL      85.000000            42.023445
+          4           5     BL      28.563754            22.413053
+          4           9     BL      38.436246            42.686450
+          5           6     BL     -61.436246            -8.795226
+          6           7     BL      23.563754            21.421496
+          7           8     BL     -76.436246           -14.595613
+          8           9     BL      86.563754            23.207116
+
+   Bus Voltages and Phase Angles
+
+   Bus Number      Phase Angle      Voltage Magnitude
+          1          0.000000             1.040000
+          2         10.030094             1.025330
+          3          5.215786             1.025360
+          4         -2.122655             1.001859
+          5         -3.653829             0.981627
+          6          2.438380             1.002521
+          7          1.054850             0.981268
+          8          4.290805             0.993562
+          9         -4.056826             0.966193
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+<Configuration>
+   <Powerflow>
+      <networkConfiguration>Tr2bus.raw</networkConfiguration>
+      <maxIteration>50</maxIteration>
+      <tolerance>1.0e-6</tolerance>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type preonly
+        -pc_type lu
+        -ksp_monitor
+        -ksp_max_it 1
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver> 
+    </<xmlcomment>>
+      <<xmlcomment>>
+    <LinearSolver>
+      <SolutionTolerance>1.0E-15</SolutionTolerance>
+      <MaxIterations>10000</MaxIterations>
+      <PETScPrefix>nrs</PETScPrefix>
+      <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <LinearSolver>
+         <PETScOptions>
+        -ksp_view
+        -ksp_type richardson
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu_dist
+        -ksp_max_it 1
+      </PETScOptions>
+      </LinearSolver>
+      <<xmlcomment>>
+    <LinearSolver>
+      <PETScOptions>
+        -ksp_view
+        -pc_type lu
+        -pc_factor_mat_solver_type superlu
+        -ksp_max_it 1
+      </PETScOptions>
+    </LinearSolver>
+    </<xmlcomment>>
+      <<xmlcomment>> 
+         If UseNewton is true a NewtonRaphsonSolver is
+         used. Otherwise, a PETSc-based NonlinearSolver is
+         used. Configuration parameters for both are included here. 
+    </<xmlcomment>>
+      <UseNewton>false</UseNewton>
+      <NewtonRaphsonSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <LinearSolver>
+            <SolutionTolerance>1.0E-08</SolutionTolerance>
+            <MaxIterations>50</MaxIterations>
+            <PETScOptions>
+          -ksp_type bicg
+          -pc_type bjacobi
+          -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+          -ksp_monitor
+          -ksp_view
+        </PETScOptions>
+         </LinearSolver>
+      </NewtonRaphsonSolver>
+      <NonlinearSolver>
+         <SolutionTolerance>1.0E-05</SolutionTolerance>
+         <FunctionTolerance>1.0E-05</FunctionTolerance>
+         <MaxIterations>50</MaxIterations>
+         <PETScOptions>
+        -ksp_type bicg
+        -pc_type bjacobi
+        -sub_pc_type ilu -sub_pc_factor_levels 5 -sub_ksp_type preonly 
+        -snes_view
+        -snes_monitor
+        -ksp_monitor
+        -ksp_view
+      </PETScOptions>
+      </NonlinearSolver>
+      <Helics>
+         <connectNode> 2 </connectNode>
+         <connectNodes>
+            <ss>
+               <connectNode> 3 </connectNode>
+            </ss>
+         </connectNodes>
+         <loadAmplifier> 15 </loadAmplifier>
+         <useHelics> true </useHelics>
+         <cosim_time_interval> 1.0 </cosim_time_interval>
+      </Helics>
+   </Powerflow>
+</Configuration>
+Network filename: (Tr2bus.raw)
+Using V23 parser
+0: I have 9 buses and 9 branches
+Process: 0 NBUS: 9 NBRANCH: 9
+
+Maximum number of iterations: 50
+
+Convergence tolerance: 0.000001
+
+Iteration 0
+
+Calling solver
+KSP Object: (qatf_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (qatf_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+KSP Object: (qatf_) 1 MPI processes
+  type: richardson
+    damping factor=1.
+  maximum iterations=1, nonzero initial guess
+  tolerances:  relative=1e-06, absolute=1e-06, divergence=10000.
+  left preconditioning
+  using PRECONDITIONED norm type for convergence test
+PC Object: (qatf_) 1 MPI processes
+  type: lu
+    out-of-place factorization
+    tolerance for zero pivot 2.22045e-14
+    matrix ordering: external
+    factor fill ratio given 0., needed 0.
+      Factored matrix follows:
+        Mat Object: 1 MPI processes
+          type: superlu_dist
+          rows=28, cols=28
+          package used to perform factorization: superlu_dist
+          total: nonzeros=0, allocated nonzeros=0
+            SuperLU_DIST run parameters:
+              Process grid nprow 1 x npcol 1 
+              Equilibrate matrix TRUE 
+              Replace tiny pivots FALSE 
+              Use iterative refinement FALSE 
+              Processors in row 1 col partition 1 
+              Row permutation LargeDiag_MC64
+              Column permutation METIS_AT_PLUS_A
+              Parallel symbolic factorization FALSE 
+              Repeated factorization SamePattern
+  linear system matrix = precond matrix:
+  Mat Object: 1 MPI processes
+    type: seqaij
+    rows=28, cols=28
+    total: nonzeros=328, allocated nonzeros=784
+    total number of mallocs used during MatSetValues calls=0
+      using I-node routines: found 8 nodes, limit used is 5
+
+Iteration 1 Tol: 1.669207e-10
+
+   Branch Power Flow
+
+        Bus 1       Bus 2   CKT         P                    Q
+          1           4     BL      67.000000            70.107590
+          2           8     BL     163.000000            60.286770
+          3           6     BL      85.000000            42.023445
+          4           5     BL      28.563754            22.413053
+          4           9     BL      38.436246            42.686450
+          5           6     BL     -61.436246            -8.795226
+          6           7     BL      23.563754            21.421496
+          7           8     BL     -76.436246           -14.595613
+          8           9     BL      86.563754            23.207116
+
+   Bus Voltages and Phase Angles
+
+   Bus Number      Phase Angle      Voltage Magnitude
+          1          0.000000             1.040000
+          2         10.030094             1.025330
+          3          5.215786             1.025360
+          4         -2.122655             1.001859
+          5         -3.653829             0.981627
+          6          2.438380             1.002521
+          7          1.054850             0.981268
+          8          4.290805             0.993562
+          9         -4.056826             0.966193
+[2025-10-25 16:28:35.264] [console] [debug] gridpack[10]::setting value for gridpack/Va size 24
+[2025-10-25 16:28:35.264] [console] [debug] gridpack[10]::setting value for gridpack/Vb size 24
+[2025-10-25 16:28:35.264] [console] [debug] gridpack[10]::setting value for gridpack/Vc size 24
+[2025-10-25 16:28:35.264] [console] [debug] gridpack[10]::setting value for gridpack/Va_2 size 24
+[2025-10-25 16:28:35.264] [console] [debug] gridpack[10]::setting value for gridpack/Vb_2 size 24
+[2025-10-25 16:28:35.264] [console] [debug] gridpack[10]::setting value for gridpack/Vc_2 size 24
+[2025-10-25 16:28:35.264] [console] [debug] gridpack (131072)[10]::Terminating
+[2025-10-25 16:28:35.264] [console] [debug] gridpack (131072)[10]::Granted Time=10
+Federate finalized.

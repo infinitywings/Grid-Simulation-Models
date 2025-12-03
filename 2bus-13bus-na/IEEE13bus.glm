@@ -1,0 +1,493 @@
+
+clock {
+    timezone PST+8PDT;
+    starttime '2025-02-21 00:00:00';  // Set an appropriate start time
+    stoptime '2025-02-21 00:00:10';  // Run simulation for 10 seconds
+}
+
+
+module powerflow {
+    solver_method NR;
+};
+module tape;
+
+module connection;
+object helics_msg {
+    name gld_hlc_conn;
+    parent Node650;
+    configure mainglm.json;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// Phase Conductor 556,500 26/7 ACSR
+object overhead_line_conductor {
+        name conductor1; 
+	geometric_mean_radius 0.031300;
+	resistance 0.185900;
+}
+
+
+
+// Phase Conductor 250,000 AA,CN
+object underground_line_conductor {
+	 name conductor2;
+	 outer_diameter 1.290000;
+	 conductor_gmr 0.017100;
+	 conductor_diameter 0.567000;
+	 conductor_resistance 0.410000;
+	 neutral_gmr 0.0020800; 
+	 neutral_resistance 14.87200;  
+	 neutral_diameter 0.0640837;
+	 neutral_strands 13.000000;
+	 shield_gmr 0.000000;
+	 shield_resistance 0.000000;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+// ID-500abcn  (overhead, balanced equilateral spacing for 2.4 kV)
+// Typical 2.4 kV pole might use ~0.4 m between phases
+object line_spacing {
+    name line_spacing1;
+    // Phase-to-phase = 0.4 m (each side of the equilateral triangle)
+    distance_AB 0.4;
+    distance_AC 0.4;
+    distance_BC 0.4;
+    // Neutral conductor placed ~0.3 m below the plane of phases
+//    distance_AN 0.3;
+//    distance_BN 0.3;
+//    distance_CN 0.3;
+}
+
+// ID-515 abc (underground, balanced equilateral spacing for 2.4 kV)
+// Typical 2.4 kV duct or trench might use ~0.2 m between phases
+object line_spacing {
+    name line_spacing2;
+    // Phase-to-phase = 0.2 m
+    distance_AB 0.2;
+    distance_BC 0.2;
+    distance_AC 0.2;
+    // Neutral (or grounded conductor) ~0.2 m from each phase conductor
+//    distance_AN 0.2;
+//    distance_BN 0.2;
+//    distance_CN 0.2;
+}
+
+//////////////////////////////////////////////////////////////
+
+// Line configurations
+// Configuration 601
+object line_configuration {
+	name line_configuration1;
+	conductor_A conductor1;
+	conductor_B conductor1;
+	conductor_C conductor1;
+	spacing line_spacing1;
+}
+
+// Configuration 606
+object line_configuration {
+     name line_configuration2;
+	 conductor_A conductor2;
+	 conductor_B conductor2;
+	 conductor_C conductor2;
+	 spacing line_spacing2;
+}
+/////////////////////////////////////////////////////////////////////////
+
+// Transformer configuration
+//object transformer_configuration {
+//	name transformer_configuration1;
+//	connect_type WYE_WYE;
+//  	install_type PADMOUNT;
+//  	power_rating 500;
+//  	primary_voltage 4160;
+//  	secondary_voltage 480;
+//  	resistance 0.011;
+//  	reactance 0.02;
+//}
+
+// Regulator configuration
+//object regulator_configuration {
+//	name regulator_configuration1;
+//	connect_type WYE_WYE;
+//	band_center 2300;
+//	band_width 20.0;
+//	time_delay 30.0;
+//	raise_taps 16;
+//	lower_taps 16;
+//	Control REMOTE_NODE;// MANUAL OUTPUT_VOLTAGE;
+	//tap_pos_A 10; // Only state these if in manual mode
+	//tap_pos_B 8;
+	//tap_pos_C 11;
+//}
+/////////////////////////////////////////////////////////////////////
+
+// Define line objects
+object overhead_line {
+     name overhead_line1;
+     phases "ABC";
+     from Node632;
+     to Load645;
+     length 500;
+     configuration line_configuration1;
+}
+object overhead_line {
+     name overhead_line2;
+     phases "ABC";
+     from Load645;
+     to Load646;
+     length 300;
+     configuration line_configuration1;
+}
+
+
+object overhead_line {
+     name overhead_line3;
+     phases "ABC";
+     from Node630;
+     to Node632;
+     length 2000;
+     configuration line_configuration1;
+}
+
+//Split line for distributed load
+object overhead_line {
+     name overhead_line4;
+     phases "ABC";
+     from Node632;
+     to Load6321;
+     length 500;
+     configuration line_configuration1;
+}
+
+object overhead_line {
+     name overhead_line5;
+     phases "ABC";
+     from Load6321;
+     to Load671;
+     length 1500;
+     configuration line_configuration1;
+}
+//End split line
+
+object overhead_line {
+     name overhead_line6;
+     phases "ABC";
+     from Load671;
+     to Node680;
+     length 1000;
+     configuration line_configuration1;
+}
+
+object overhead_line {
+     name overhead_line7;
+     phases "ABC";
+     from Load671;
+     to Node684;
+     length 300;
+     configuration line_configuration1;
+}
+
+ object overhead_line {
+      name overhead_line8;
+      phases "ABC";
+      from Node684;
+      to Load611;
+      length 300;
+      configuration line_configuration1;
+}
+
+//////////////////// instead of trans and reg:
+ object overhead_line {
+      name overhead_line12;
+      phases "ABC";
+      from Node633;
+      to Load634;
+      length 300;
+      configuration line_configuration1;
+}
+
+ object overhead_line {
+      name overhead_line13;
+      phases "ABC";
+      from Node650;
+      to Node630;
+      length 300;
+      configuration line_configuration1;
+}
+//////////////////////////////////////////////////////
+object underground_line {
+      name overhead_line9;
+      phases "ABC";
+      from Node684;
+      to Load652;
+      length 800;
+      configuration line_configuration2;
+}
+
+object underground_line {
+     name overhead_line10;
+     phases "ABC";
+     from Load692;
+     to Load675;
+     length 500;
+     configuration line_configuration2;
+}
+
+object overhead_line {
+     name overhead_line11;
+     phases "ABC";
+     from Node632;
+     to Node633;
+     length 500;
+     configuration line_configuration1;
+}
+//////////////////////////////////////////////////////////////////////
+
+
+// Create node objects
+object node {
+     name Node633;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+     nominal_voltage 2401.7771;
+}
+
+object node {
+     name Node630;
+     phases "ABC";
+     voltage_A 2401.7771+0j;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+     nominal_voltage 2401.7771;
+}
+ 
+object node {
+     name Node632;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+     nominal_voltage 2401.7771;
+}
+
+object meter {
+      name Node650;
+      phases "ABC";
+      bustype SWING;
+      voltage_A 2401.7771;
+      voltage_B -1200.8886-2080.000j;
+      voltage_C -1200.8886+2080.000j;
+      nominal_voltage 2401.7771;
+      object recorder {
+      	     name slack_recorder;
+    	     property measured_voltage_A,measured_power_A,measured_voltage_B,measured_power_B,measured_voltage_C,measured_power_C;
+             interval 1;  // Record every second
+             limit 20;  // Record for 10 seconds
+             file "gld_cosim_right.csv";  // Output file
+      };
+} 
+ 
+object node {
+       name Node680;
+       phases "ABC";
+       voltage_A 2401.7771;
+       voltage_B -1200.8886-2080.000j;
+       voltage_C -1200.8886+2080.000j;
+       nominal_voltage 2401.7771;
+}
+ 
+ 
+object node {
+      name Node684;
+      phases "ABC";
+      voltage_A 2401.7771;
+      voltage_B -1200.8886-2080.000j;
+      voltage_C -1200.8886+2080.000j;
+      nominal_voltage 2401.7771;
+} 
+////////////////////////////////////////////////////////////////////////////////////// 
+ 
+ 
+// Create load objects 
+
+object load {
+    name Load634;
+    phases "ABC";
+    voltage_A 2401.7771;
+    voltage_B -1200.8886-2080.000j;
+    voltage_C -1200.8886+2080.000j;
+    // Each phase: P = 120000 W, Q = 120000·tan(arccos(0.8)) = 90000 var
+    constant_power_A 120000+90000j;
+    constant_power_B 120000+90000j;
+    constant_power_C 120000+90000j;
+    nominal_voltage 2401.7771;
+}
+
+ 
+object load {
+     name Load645;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+         // Each phase: P = 120000 W, Q = 120000·tan(arccos(0.8)) = 90000 var
+     constant_power_A 50000+90000j;
+     constant_power_B 50000+90000j;
+     constant_power_C 50000+90000j;
+     nominal_voltage 2401.7771;
+}
+ 
+object load {
+     name Load646;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+    // Each phase: P = 120000 W, Q = 120000·tan(arccos(0.8)) = 90000 var
+     constant_power_A 12000+9000j;
+     constant_power_B 12000+9000j;
+     constant_power_C 12000+9000j;
+     nominal_voltage 2401.7771;
+}
+ 
+ 
+object load {
+     name Load652;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+    // Each phase: P = 120000 W, Q = 120000·tan(arccos(0.8)) = 90000 var
+     constant_power_A 12000+9000j;
+     constant_power_B 12000+9000j;
+     constant_power_C 12000+9000j;
+     nominal_voltage 2401.7771;
+}
+ 
+object load {
+     name Load671;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+    // Each phase: P = 120000 W, Q = 385000·tan(arccos(0.8)) = 288750 var
+     constant_power_A 385000+288750j;
+     constant_power_B 385000+288750j;
+     constant_power_C 385000+288750j;
+     nominal_voltage 2401.7771;
+}
+ 
+object load {
+     name Load675;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+    // Each phase: P = 120000 W, Q = 485000·tan(arccos(0.8)) = 363750 var
+     constant_power_A 485000+363750j;
+     constant_power_B 485000+363750j;
+     constant_power_C 485000+363750j;
+     nominal_voltage 2401.7771;
+}
+ 
+object load {
+     name Load692;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+    // Each phase: P = 120000 W, Q = 120000·tan(arccos(0.8)) = 90000 var
+     constant_power_A 12000+9000j;
+     constant_power_B 12000+9000j;
+     constant_power_C 12000+9000j;
+     nominal_voltage 2401.7771;
+}
+ 
+object load {
+     name Load611;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+    // Each phase: P = 120000 W, Q = 120000·tan(arccos(0.8)) = 90000 var
+     constant_power_A 120000+90000j;
+     constant_power_B 120000+90000j;
+     constant_power_C 120000+90000j;
+     nominal_voltage 2401.7771;
+}
+ 
+// distributed load between node 632 and 671
+// 2/3 of load 1/4 of length down line: Kersting p.56
+object load {
+     name Load6711;
+     parent Load671;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+    // Each phase: P = 120000 W, Q = 120000·tan(arccos(0.8)) = 90000 var
+     constant_power_A 12000+9000j;
+     constant_power_B 12000+9000j;
+     constant_power_C 12000+9000j;
+     nominal_voltage 2401.7771;
+}
+
+object load {
+     name Load6321;
+     phases "ABC";
+     voltage_A 2401.7771;
+     voltage_B -1200.8886-2080.000j;
+     voltage_C -1200.8886+2080.000j;
+    // Each phase: P = 120000 W, Q = 200000·tan(arccos(0.8)) = 15000 var
+     constant_power_A 20000+15000j;
+     constant_power_B 20000+15000j;
+     constant_power_C 20000+15000j;
+     nominal_voltage 2401.7771;
+}
+ 
+
+ 
+// Switch
+object switch {
+	 name switch1;
+     phases "ABCN";
+     from Load671;
+     to Load692;
+     status CLOSED;
+}
+ 
+// Transformer
+
+//  object transformer {
+//	name XFMR1;
+//  	phases "ABCN";
+//  	from Node633;
+//  	to Load634;
+//  	configuration transformer_configuration1;
+//}
+  
+ 
+  // Regulator
+  
+//object regulator {
+//	name Reg1;
+//	 phases "ABC";
+//	 from Node650;
+//	 to Node630;
+//	 sense_node Load671;
+//	 configuration regulator_configuration1;
+//}
+
+// object recorder {
+//          parent Reg1;
+//          file reg1_output.csv;
+//          interval 1;
+//          limit 1;
+//          property tap_A,tap_B,tap_C,power_in_A.real,power_in_A.imag,power_in_B.real,power_in_B.imag,power_in_C.real,power_in_C.imag,power_in.real,power_in.imag;
+//}

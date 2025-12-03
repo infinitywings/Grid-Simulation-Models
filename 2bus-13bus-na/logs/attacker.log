@@ -1,0 +1,619 @@
+2025-10-25 16:28:33,498 | INFO | src.action_service | ActionService initialized in ATTACK mode (max=4000 kW, min=-1000 kW)
+2025-10-25 16:28:33,498 | INFO | src.server | Starting EV setpoint MCP server
+2025-10-25 16:28:33,498 | INFO | src.ev_federate | Initializing EV setpoint federate
+2025-10-25 16:28:35,236 | INFO | src.ev_federate | HELICS federate ev_attacker_mcp entered execution mode
+ * Serving Flask app 'src.server'
+ * Debug mode: off
+2025-10-25 16:28:35,411 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5100
+ * Running on http://172.20.0.2:5100
+2025-10-25 16:28:35,411 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2025-10-25 16:28:37,366 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:28:37,366 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:37] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:37,368 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:28:37,368 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:37] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:42,175 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:28:42,175 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=3500.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=a0336067-c462-4fcb-a027-4ece44755c21 | sequence=1
+2025-10-25 16:28:42,176 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (3500000.0+0.0j)
+2025-10-25 16:28:42,177 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:42] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:42,280 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:28:42,280 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=3500.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=a0336067-c462-4fcb-a027-4ece44755c21 | sequence=2
+2025-10-25 16:28:42,280 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (3500000.0+0.0j)
+2025-10-25 16:28:42,280 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:42] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:42,382 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:28:42,382 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=3500.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=a0336067-c462-4fcb-a027-4ece44755c21 | sequence=3
+2025-10-25 16:28:42,382 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (3500000.0+0.0j)
+2025-10-25 16:28:42,382 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:42] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:42,484 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:28:42,484 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=3500.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=a0336067-c462-4fcb-a027-4ece44755c21 | sequence=4
+2025-10-25 16:28:42,485 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (3500000.0+0.0j)
+2025-10-25 16:28:42,485 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:42] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:42,587 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:28:42,587 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=3500.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=a0336067-c462-4fcb-a027-4ece44755c21 | sequence=5
+2025-10-25 16:28:42,587 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (3500000.0+0.0j)
+2025-10-25 16:28:42,588 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:42] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:42,690 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:28:42,690 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=3500.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=a0336067-c462-4fcb-a027-4ece44755c21 | sequence=6
+2025-10-25 16:28:42,690 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (3500000.0+0.0j)
+2025-10-25 16:28:42,691 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:42] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:47,801 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:28:47,802 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:47] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:51,613 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:28:51,614 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=01f1a6df-e358-4e19-8c2c-710f4b6fd525 | sequence=1
+2025-10-25 16:28:51,614 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+0.0j)
+2025-10-25 16:28:51,615 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:51] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:51,718 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:28:51,718 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=01f1a6df-e358-4e19-8c2c-710f4b6fd525 | sequence=2
+2025-10-25 16:28:51,718 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+0.0j)
+2025-10-25 16:28:51,718 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:51] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:28:56,828 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:28:56,829 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:28:56] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:01,101 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:01,102 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=69c45306-bd16-4bb7-8864-48fe89b81743 | sequence=1
+2025-10-25 16:29:01,102 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+500000.0j)
+2025-10-25 16:29:01,103 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:01] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:01,207 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:01,207 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=69c45306-bd16-4bb7-8864-48fe89b81743 | sequence=2
+2025-10-25 16:29:01,207 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+500000.0j)
+2025-10-25 16:29:01,208 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:01] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:06,318 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:29:06,319 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:06] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:11,308 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:11,309 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=1e2c7022-1019-4fab-bd4d-03dff8090683 | sequence=1
+2025-10-25 16:29:11,309 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+2000000.0j)
+2025-10-25 16:29:11,309 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:11] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:11,411 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:11,411 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=1e2c7022-1019-4fab-bd4d-03dff8090683 | sequence=2
+2025-10-25 16:29:11,411 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (4000000.0+2000000.0j)
+2025-10-25 16:29:11,411 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:11] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:16,514 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:29:16,515 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:16] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:19,951 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:19,952 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=97e06e38-7582-4689-8217-fa4cf9952dd3 | sequence=1
+2025-10-25 16:29:19,952 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (4000000.0+0.0j)
+2025-10-25 16:29:19,952 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:20,055 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:20,055 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=97e06e38-7582-4689-8217-fa4cf9952dd3 | sequence=2
+2025-10-25 16:29:20,055 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (4000000.0+0.0j)
+2025-10-25 16:29:20,055 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:20] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:25,163 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:29:25,163 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:25] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:32,539 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:29:32,540 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:32] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:41,567 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:41,568 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=ee6ceca6-3f8b-44e4-a739-1dd587e1143b | sequence=1
+2025-10-25 16:29:41,568 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (-500000.0+0.0j)
+2025-10-25 16:29:41,569 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:41] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:41,672 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:41,672 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=ee6ceca6-3f8b-44e4-a739-1dd587e1143b | sequence=2
+2025-10-25 16:29:41,672 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (-500000.0+0.0j)
+2025-10-25 16:29:41,673 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:41] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:41,775 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:41,776 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=ee6ceca6-3f8b-44e4-a739-1dd587e1143b | sequence=3
+2025-10-25 16:29:41,776 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (-500000.0+0.0j)
+2025-10-25 16:29:41,776 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:41] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:41,878 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:41,879 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=ee6ceca6-3f8b-44e4-a739-1dd587e1143b | sequence=4
+2025-10-25 16:29:41,879 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (-500000.0+0.0j)
+2025-10-25 16:29:41,879 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:41] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:41,982 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:41,983 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=ee6ceca6-3f8b-44e4-a739-1dd587e1143b | sequence=5
+2025-10-25 16:29:41,983 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (-500000.0+0.0j)
+2025-10-25 16:29:41,984 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:41] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:42,086 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:42,086 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=ee6ceca6-3f8b-44e4-a739-1dd587e1143b | sequence=6
+2025-10-25 16:29:42,086 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (-500000.0+0.0j)
+2025-10-25 16:29:42,087 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:42] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:47,197 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:29:47,198 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:47] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:51,278 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:29:51,278 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=6c476f55-0c30-4dfa-8878-76a1694cece0 | sequence=1
+2025-10-25 16:29:51,278 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+0.0j)
+2025-10-25 16:29:51,278 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:51] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:29:56,387 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:29:56,388 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:29:56] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:01,824 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:01,825 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=c110a7d5-ed07-4efe-a7a9-ba82c6f92efa | sequence=1
+2025-10-25 16:30:01,825 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+0.0j)
+2025-10-25 16:30:01,826 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:01] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:01,930 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:01,930 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=c110a7d5-ed07-4efe-a7a9-ba82c6f92efa | sequence=2
+2025-10-25 16:30:01,930 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+0.0j)
+2025-10-25 16:30:01,930 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:01] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:02,033 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:02,033 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=c110a7d5-ed07-4efe-a7a9-ba82c6f92efa | sequence=3
+2025-10-25 16:30:02,033 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (4000000.0+0.0j)
+2025-10-25 16:30:02,033 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:02] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:02,136 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:02,136 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=c110a7d5-ed07-4efe-a7a9-ba82c6f92efa | sequence=4
+2025-10-25 16:30:02,136 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (4000000.0+0.0j)
+2025-10-25 16:30:02,136 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:02] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:02,240 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:02,240 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=c110a7d5-ed07-4efe-a7a9-ba82c6f92efa | sequence=5
+2025-10-25 16:30:02,240 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (4000000.0+0.0j)
+2025-10-25 16:30:02,241 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:02] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:07,350 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:30:07,351 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:07] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:11,870 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:11,870 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=3a5b86bd-2050-453b-9029-59c235573591 | sequence=1
+2025-10-25 16:30:11,870 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+0.0j)
+2025-10-25 16:30:11,871 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:11] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:11,975 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:11,975 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=3a5b86bd-2050-453b-9029-59c235573591 | sequence=2
+2025-10-25 16:30:11,975 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+0.0j)
+2025-10-25 16:30:11,976 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:11] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:12,079 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:12,079 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=3a5b86bd-2050-453b-9029-59c235573591 | sequence=3
+2025-10-25 16:30:12,079 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+0.0j)
+2025-10-25 16:30:12,079 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:12] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:17,189 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:30:17,191 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:17] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:23,929 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:23,929 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=1000.0 kvar | Type=overload_attack | interaction_id=6e0f826a-8f63-4608-b37d-1058e762c110 | sequence=1
+2025-10-25 16:30:23,930 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+1000000.0j)
+2025-10-25 16:30:23,930 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:23] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:24,034 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:24,034 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=1000.0 kvar | Type=overload_attack | interaction_id=6e0f826a-8f63-4608-b37d-1058e762c110 | sequence=2
+2025-10-25 16:30:24,034 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+1000000.0j)
+2025-10-25 16:30:24,035 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:24] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:24,137 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:24,137 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=1000.0 kvar | Type=overload_attack | interaction_id=6e0f826a-8f63-4608-b37d-1058e762c110 | sequence=3
+2025-10-25 16:30:24,137 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+1000000.0j)
+2025-10-25 16:30:24,138 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:24] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:24,240 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:24,241 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=4000.0 kW | Q=1000.0 kvar | Type=overload_attack | interaction_id=6e0f826a-8f63-4608-b37d-1058e762c110 | sequence=4
+2025-10-25 16:30:24,241 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (4000000.0+1000000.0j)
+2025-10-25 16:30:24,241 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:24] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:24,344 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:24,344 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=4000.0 kW | Q=1000.0 kvar | Type=overload_attack | interaction_id=6e0f826a-8f63-4608-b37d-1058e762c110 | sequence=5
+2025-10-25 16:30:24,344 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (4000000.0+1000000.0j)
+2025-10-25 16:30:24,344 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:24] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:24,447 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:24,447 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=4000.0 kW | Q=1000.0 kvar | Type=overload_attack | interaction_id=6e0f826a-8f63-4608-b37d-1058e762c110 | sequence=6
+2025-10-25 16:30:24,447 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (4000000.0+1000000.0j)
+2025-10-25 16:30:24,448 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:24] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:29,558 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:30:29,559 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:29] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:33,648 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:33,648 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=de10d362-49dc-4bbe-b957-ac0fbd7a63d3 | sequence=1
+2025-10-25 16:30:33,648 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+2000000.0j)
+2025-10-25 16:30:33,649 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:33] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:38,759 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:30:38,760 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:38] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:44,010 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:44,011 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=960994e6-b43a-4e3c-9142-9ab6a4d63473 | sequence=1
+2025-10-25 16:30:44,011 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+0.0j)
+2025-10-25 16:30:44,012 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:44,117 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:44,117 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=960994e6-b43a-4e3c-9142-9ab6a4d63473 | sequence=2
+2025-10-25 16:30:44,117 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+0.0j)
+2025-10-25 16:30:44,119 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:44,221 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:44,221 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=960994e6-b43a-4e3c-9142-9ab6a4d63473 | sequence=3
+2025-10-25 16:30:44,221 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+0.0j)
+2025-10-25 16:30:44,221 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:44,324 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:44,324 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=960994e6-b43a-4e3c-9142-9ab6a4d63473 | sequence=4
+2025-10-25 16:30:44,324 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (4000000.0+0.0j)
+2025-10-25 16:30:44,324 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:44,426 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:44,426 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=960994e6-b43a-4e3c-9142-9ab6a4d63473 | sequence=5
+2025-10-25 16:30:44,426 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (4000000.0+0.0j)
+2025-10-25 16:30:44,427 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:44,529 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:44,529 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=960994e6-b43a-4e3c-9142-9ab6a4d63473 | sequence=6
+2025-10-25 16:30:44,529 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (4000000.0+0.0j)
+2025-10-25 16:30:44,530 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:49,639 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:30:49,640 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:49] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:53,598 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:53,598 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=daa78966-ad57-40cc-bfe4-8e7b8138e074 | sequence=1
+2025-10-25 16:30:53,598 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+2000000.0j)
+2025-10-25 16:30:53,599 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:53] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:53,705 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:53,705 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=daa78966-ad57-40cc-bfe4-8e7b8138e074 | sequence=2
+2025-10-25 16:30:53,705 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+2000000.0j)
+2025-10-25 16:30:53,707 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:53] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:53,809 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:30:53,810 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=daa78966-ad57-40cc-bfe4-8e7b8138e074 | sequence=3
+2025-10-25 16:30:53,810 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+2000000.0j)
+2025-10-25 16:30:53,810 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:53] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:30:58,919 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:30:58,920 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:30:58] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:02,909 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:02,909 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=38851263-77fe-491a-bfdb-b436bfa33a2f | sequence=1
+2025-10-25 16:31:02,910 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (-500000.0+0.0j)
+2025-10-25 16:31:02,911 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:02] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:03,013 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:03,013 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=38851263-77fe-491a-bfdb-b436bfa33a2f | sequence=2
+2025-10-25 16:31:03,014 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (-500000.0+0.0j)
+2025-10-25 16:31:03,014 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:03] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:08,124 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:31:08,125 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:08] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:11,891 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:11,891 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=d8ebf65e-20d7-401d-8270-3af15f8f786f | sequence=1
+2025-10-25 16:31:11,891 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+0.0j)
+2025-10-25 16:31:11,892 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:11] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:11,995 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:11,995 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=d8ebf65e-20d7-401d-8270-3af15f8f786f | sequence=2
+2025-10-25 16:31:11,995 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+0.0j)
+2025-10-25 16:31:11,996 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:11] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:17,105 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:31:17,106 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:17] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:26,117 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:31:26,118 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:26] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:31,018 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:31,018 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=200.0 kvar | Type=overload_attack | interaction_id=efedd3f1-ad59-43a5-a4fd-8c594cfac5bb | sequence=1
+2025-10-25 16:31:31,019 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+200000.0j)
+2025-10-25 16:31:31,020 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:31] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:31,124 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:31,125 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=200.0 kvar | Type=overload_attack | interaction_id=efedd3f1-ad59-43a5-a4fd-8c594cfac5bb | sequence=2
+2025-10-25 16:31:31,125 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+200000.0j)
+2025-10-25 16:31:31,125 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:31] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:31,228 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:31,228 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=200.0 kvar | Type=overload_attack | interaction_id=efedd3f1-ad59-43a5-a4fd-8c594cfac5bb | sequence=3
+2025-10-25 16:31:31,228 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+200000.0j)
+2025-10-25 16:31:31,229 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:31] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:36,337 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:31:36,339 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:36] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:44,551 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:31:44,552 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:49,846 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:49,846 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=ee3df653-6371-4510-b9bf-4b040179ecb0 | sequence=1
+2025-10-25 16:31:49,846 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+2000000.0j)
+2025-10-25 16:31:49,846 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:49] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:49,951 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:49,951 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=ee3df653-6371-4510-b9bf-4b040179ecb0 | sequence=2
+2025-10-25 16:31:49,951 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+2000000.0j)
+2025-10-25 16:31:49,952 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:49] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:50,055 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:50,055 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=ee3df653-6371-4510-b9bf-4b040179ecb0 | sequence=3
+2025-10-25 16:31:50,055 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+2000000.0j)
+2025-10-25 16:31:50,056 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:50] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:55,163 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:31:55,164 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:55] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:59,228 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:59,229 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=b0c1a333-0e37-4ddf-aebc-73fe004ea786 | sequence=1
+2025-10-25 16:31:59,229 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+2000000.0j)
+2025-10-25 16:31:59,230 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:59] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:31:59,333 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:31:59,333 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=b0c1a333-0e37-4ddf-aebc-73fe004ea786 | sequence=2
+2025-10-25 16:31:59,333 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+2000000.0j)
+2025-10-25 16:31:59,334 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:31:59] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:04,442 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:32:04,467 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:04] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:12,483 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:32:12,484 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:12] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:18,705 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:32:18,705 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=0b915bfe-121e-4854-bfcd-cc2a96c36ca7 | sequence=1
+2025-10-25 16:32:18,705 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+500000.0j)
+2025-10-25 16:32:18,706 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:18] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:18,811 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:32:18,811 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=0b915bfe-121e-4854-bfcd-cc2a96c36ca7 | sequence=2
+2025-10-25 16:32:18,811 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+500000.0j)
+2025-10-25 16:32:18,812 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:18] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:18,916 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:32:18,916 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=0b915bfe-121e-4854-bfcd-cc2a96c36ca7 | sequence=3
+2025-10-25 16:32:18,916 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+500000.0j)
+2025-10-25 16:32:18,916 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:18] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:19,019 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:32:19,020 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=0b915bfe-121e-4854-bfcd-cc2a96c36ca7 | sequence=4
+2025-10-25 16:32:19,020 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (4000000.0+500000.0j)
+2025-10-25 16:32:19,020 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:19,123 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:32:19,123 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=0b915bfe-121e-4854-bfcd-cc2a96c36ca7 | sequence=5
+2025-10-25 16:32:19,123 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (4000000.0+500000.0j)
+2025-10-25 16:32:19,123 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:19,225 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:32:19,225 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=0b915bfe-121e-4854-bfcd-cc2a96c36ca7 | sequence=6
+2025-10-25 16:32:19,225 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (4000000.0+500000.0j)
+2025-10-25 16:32:19,225 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:24,335 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:32:24,337 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:24] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:30,056 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:32:30,056 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=12c3dc17-15ae-4e21-a52f-f2c929cf4dad | sequence=1
+2025-10-25 16:32:30,056 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+500000.0j)
+2025-10-25 16:32:30,056 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:30] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:30,159 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:32:30,159 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=12c3dc17-15ae-4e21-a52f-f2c929cf4dad | sequence=2
+2025-10-25 16:32:30,159 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+500000.0j)
+2025-10-25 16:32:30,159 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:30] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:35,268 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:32:35,270 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:35] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:38,972 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:32:38,972 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=-500.0 kW | Q=1000.0 kvar | Type=reverse_power_injection | interaction_id=bfd3f8c8-b379-4024-87b9-0f976eab6642 | sequence=1
+2025-10-25 16:32:38,973 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (-500000.0+1000000.0j)
+2025-10-25 16:32:38,974 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:38] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:44,082 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:32:44,083 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:49,286 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:32:49,287 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=0.0 kW | Q=200.0 kvar | Type=reactive_power_attack | interaction_id=8726d713-961e-4644-8380-d8e763174907 | sequence=1
+2025-10-25 16:32:49,287 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (0.0+200000.0j)
+2025-10-25 16:32:49,288 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:49] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:32:54,397 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:32:54,398 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:32:54] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:01,641 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:01,642 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=b7a208a1-c10d-41b9-bdca-fd4c8e4546e9 | sequence=1
+2025-10-25 16:33:01,642 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+500000.0j)
+2025-10-25 16:33:01,643 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:01] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:01,746 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:01,746 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=b7a208a1-c10d-41b9-bdca-fd4c8e4546e9 | sequence=2
+2025-10-25 16:33:01,746 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+500000.0j)
+2025-10-25 16:33:01,746 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:01] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:01,849 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:01,849 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=b7a208a1-c10d-41b9-bdca-fd4c8e4546e9 | sequence=3
+2025-10-25 16:33:01,849 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+500000.0j)
+2025-10-25 16:33:01,849 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:01] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:01,952 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:01,952 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=b7a208a1-c10d-41b9-bdca-fd4c8e4546e9 | sequence=4
+2025-10-25 16:33:01,952 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (4000000.0+500000.0j)
+2025-10-25 16:33:01,953 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:01] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:02,055 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:02,055 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=b7a208a1-c10d-41b9-bdca-fd4c8e4546e9 | sequence=5
+2025-10-25 16:33:02,055 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (4000000.0+500000.0j)
+2025-10-25 16:33:02,055 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:02] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:02,158 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:02,158 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=b7a208a1-c10d-41b9-bdca-fd4c8e4546e9 | sequence=6
+2025-10-25 16:33:02,158 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (4000000.0+500000.0j)
+2025-10-25 16:33:02,159 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:02] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:07,268 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:33:07,269 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:07] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:11,246 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:11,246 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=b89fcae5-f2e8-4b36-8e55-fee5b96d2e6e | sequence=1
+2025-10-25 16:33:11,246 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (-500000.0+0.0j)
+2025-10-25 16:33:11,246 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:11] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:11,348 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:11,348 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=b89fcae5-f2e8-4b36-8e55-fee5b96d2e6e | sequence=2
+2025-10-25 16:33:11,348 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (-500000.0+0.0j)
+2025-10-25 16:33:11,349 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:11] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:16,456 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:33:16,457 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:16] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:19,082 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:19,082 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=0d8325e3-5ca1-4a5f-83ed-cbe501580d0f | sequence=1
+2025-10-25 16:33:19,082 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+0.0j)
+2025-10-25 16:33:19,083 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:19,187 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:19,187 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=0d8325e3-5ca1-4a5f-83ed-cbe501580d0f | sequence=2
+2025-10-25 16:33:19,187 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+0.0j)
+2025-10-25 16:33:19,188 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:24,298 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:33:24,299 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:24] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:29,584 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:29,585 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=400.0 kvar | Type=overload_attack | interaction_id=0dbfc9d6-4c18-41fa-ba81-b399659bb75e | sequence=1
+2025-10-25 16:33:29,585 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+400000.0j)
+2025-10-25 16:33:29,586 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:29] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:29,690 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:29,691 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=400.0 kvar | Type=overload_attack | interaction_id=0dbfc9d6-4c18-41fa-ba81-b399659bb75e | sequence=2
+2025-10-25 16:33:29,691 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+400000.0j)
+2025-10-25 16:33:29,692 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:29] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:34,803 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:33:34,804 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:34] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:39,043 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:39,043 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=08bfefea-bd30-44ca-95e2-9404dd91910d | sequence=1
+2025-10-25 16:33:39,044 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+2000000.0j)
+2025-10-25 16:33:39,045 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:39] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:44,154 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:33:44,155 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:48,371 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:48,371 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=b8834da3-faa3-4d77-9113-4f13a80d2460 | sequence=1
+2025-10-25 16:33:48,371 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+2000000.0j)
+2025-10-25 16:33:48,372 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:48] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:53,483 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:33:53,484 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:53] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:59,196 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:59,196 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=e4840f87-6033-479b-a9a8-fb5575e0e025 | sequence=1
+2025-10-25 16:33:59,196 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+500000.0j)
+2025-10-25 16:33:59,197 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:59] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:59,301 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:59,301 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=e4840f87-6033-479b-a9a8-fb5575e0e025 | sequence=2
+2025-10-25 16:33:59,301 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+500000.0j)
+2025-10-25 16:33:59,301 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:59] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:33:59,403 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:33:59,404 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=e4840f87-6033-479b-a9a8-fb5575e0e025 | sequence=3
+2025-10-25 16:33:59,404 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+500000.0j)
+2025-10-25 16:33:59,404 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:33:59] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:04,512 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:34:04,512 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:04] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:10,359 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:10,359 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=1000.0 kvar | Type=overload_attack | interaction_id=df9cafde-8733-4957-8b53-a977a5d83903 | sequence=1
+2025-10-25 16:34:10,359 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+1000000.0j)
+2025-10-25 16:34:10,359 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:10] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:10,461 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:10,462 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=1000.0 kvar | Type=overload_attack | interaction_id=df9cafde-8733-4957-8b53-a977a5d83903 | sequence=2
+2025-10-25 16:34:10,462 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+1000000.0j)
+2025-10-25 16:34:10,462 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:10] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:10,565 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:10,565 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=1000.0 kvar | Type=overload_attack | interaction_id=df9cafde-8733-4957-8b53-a977a5d83903 | sequence=3
+2025-10-25 16:34:10,565 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+1000000.0j)
+2025-10-25 16:34:10,566 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:10] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:15,674 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:34:15,675 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:15] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:19,314 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:19,315 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=d2ad4bca-753b-4c23-936c-693ddeb340c3 | sequence=1
+2025-10-25 16:34:19,315 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+0.0j)
+2025-10-25 16:34:19,316 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:19,421 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:19,421 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=d2ad4bca-753b-4c23-936c-693ddeb340c3 | sequence=2
+2025-10-25 16:34:19,421 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+0.0j)
+2025-10-25 16:34:19,422 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:19,525 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:19,525 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=d2ad4bca-753b-4c23-936c-693ddeb340c3 | sequence=3
+2025-10-25 16:34:19,525 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+0.0j)
+2025-10-25 16:34:19,526 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:19,627 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:19,627 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=d2ad4bca-753b-4c23-936c-693ddeb340c3 | sequence=4
+2025-10-25 16:34:19,627 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (4000000.0+0.0j)
+2025-10-25 16:34:19,628 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:19,730 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:19,730 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=d2ad4bca-753b-4c23-936c-693ddeb340c3 | sequence=5
+2025-10-25 16:34:19,730 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (4000000.0+0.0j)
+2025-10-25 16:34:19,731 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:19,833 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:19,833 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=d2ad4bca-753b-4c23-936c-693ddeb340c3 | sequence=6
+2025-10-25 16:34:19,833 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (4000000.0+0.0j)
+2025-10-25 16:34:19,834 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:24,944 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:34:24,946 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:24] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:29,687 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:29,687 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=55f9d328-2cff-4377-a3e7-be5ee2610bbb | sequence=1
+2025-10-25 16:34:29,687 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+2000000.0j)
+2025-10-25 16:34:29,688 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:29] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:29,792 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:29,792 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=55f9d328-2cff-4377-a3e7-be5ee2610bbb | sequence=2
+2025-10-25 16:34:29,792 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+2000000.0j)
+2025-10-25 16:34:29,793 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:29] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:29,896 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:29,896 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=55f9d328-2cff-4377-a3e7-be5ee2610bbb | sequence=3
+2025-10-25 16:34:29,896 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+2000000.0j)
+2025-10-25 16:34:29,897 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:29] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:35,006 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:34:35,008 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:35] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:39,676 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:39,676 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=0.0 kW | Q=500.0 kvar | Type=reactive_power_attack | interaction_id=b29feb99-9334-4d83-9c43-32c935abaaec | sequence=1
+2025-10-25 16:34:39,676 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (0.0+500000.0j)
+2025-10-25 16:34:39,676 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:39] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:39,778 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:39,778 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=0.0 kW | Q=500.0 kvar | Type=reactive_power_attack | interaction_id=b29feb99-9334-4d83-9c43-32c935abaaec | sequence=2
+2025-10-25 16:34:39,778 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (0.0+500000.0j)
+2025-10-25 16:34:39,778 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:39] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:39,880 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:39,880 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=0.0 kW | Q=500.0 kvar | Type=reactive_power_attack | interaction_id=b29feb99-9334-4d83-9c43-32c935abaaec | sequence=3
+2025-10-25 16:34:39,880 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (0.0+500000.0j)
+2025-10-25 16:34:39,881 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:39] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:44,989 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:34:44,990 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:47,185 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:47,185 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=c436759e-6398-4bfd-b176-2305704c08e8 | sequence=1
+2025-10-25 16:34:47,185 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+0.0j)
+2025-10-25 16:34:47,186 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:47] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:52,296 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:34:52,297 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:52] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:58,047 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:58,048 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=944affca-f824-4f20-a093-f8a89bd3f609 | sequence=1
+2025-10-25 16:34:58,048 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+0.0j)
+2025-10-25 16:34:58,049 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:58] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:34:58,153 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:34:58,153 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=944affca-f824-4f20-a093-f8a89bd3f609 | sequence=2
+2025-10-25 16:34:58,153 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+0.0j)
+2025-10-25 16:34:58,154 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:34:58] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:03,263 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:35:03,264 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:03] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:12,855 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:35:12,856 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:12] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:18,667 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:18,667 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=41052542-02a7-4f3f-8768-b1fb2c61e31d | sequence=1
+2025-10-25 16:35:18,668 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+0.0j)
+2025-10-25 16:35:18,669 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:18] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:18,773 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:18,774 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=41052542-02a7-4f3f-8768-b1fb2c61e31d | sequence=2
+2025-10-25 16:35:18,774 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+0.0j)
+2025-10-25 16:35:18,775 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:18] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:18,877 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:18,877 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=41052542-02a7-4f3f-8768-b1fb2c61e31d | sequence=3
+2025-10-25 16:35:18,878 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+0.0j)
+2025-10-25 16:35:18,878 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:18] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:18,980 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:18,980 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=41052542-02a7-4f3f-8768-b1fb2c61e31d | sequence=4
+2025-10-25 16:35:18,980 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (4000000.0+0.0j)
+2025-10-25 16:35:18,981 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:18] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:19,083 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:19,083 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=41052542-02a7-4f3f-8768-b1fb2c61e31d | sequence=5
+2025-10-25 16:35:19,083 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (4000000.0+0.0j)
+2025-10-25 16:35:19,084 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:19,186 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:19,186 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=41052542-02a7-4f3f-8768-b1fb2c61e31d | sequence=6
+2025-10-25 16:35:19,186 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (4000000.0+0.0j)
+2025-10-25 16:35:19,187 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:24,297 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:35:24,298 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:24] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:29,882 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:29,882 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=800.0 kvar | Type=overload_attack | interaction_id=3b5bfd5c-d4c6-4733-872c-9dd397cf877f | sequence=1
+2025-10-25 16:35:29,882 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+800000.0j)
+2025-10-25 16:35:29,882 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:29] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:34,992 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:35:34,994 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:34] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:39,758 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:39,758 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=2e4b4967-a616-4517-b294-7776cc0f3817 | sequence=1
+2025-10-25 16:35:39,758 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (4000000.0+500000.0j)
+2025-10-25 16:35:39,759 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:39] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:39,863 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:39,863 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=2e4b4967-a616-4517-b294-7776cc0f3817 | sequence=2
+2025-10-25 16:35:39,863 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (4000000.0+500000.0j)
+2025-10-25 16:35:39,864 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:39] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:44,971 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:35:44,972 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:44] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:49,028 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:49,028 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=4384b6e0-6bcf-4d62-a210-e4db4f71aa62 | sequence=1
+2025-10-25 16:35:49,028 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+2000000.0j)
+2025-10-25 16:35:49,028 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:49] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:49,132 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:49,133 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=4384b6e0-6bcf-4d62-a210-e4db4f71aa62 | sequence=2
+2025-10-25 16:35:49,133 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+2000000.0j)
+2025-10-25 16:35:49,134 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:49] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:54,243 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:35:54,243 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:54] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:59,078 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:59,078 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=d462aa3f-d8d1-44e3-b4b8-867692fefa8a | sequence=1
+2025-10-25 16:35:59,079 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+2000000.0j)
+2025-10-25 16:35:59,080 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:59] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:59,185 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:59,185 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=d462aa3f-d8d1-44e3-b4b8-867692fefa8a | sequence=2
+2025-10-25 16:35:59,185 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+2000000.0j)
+2025-10-25 16:35:59,186 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:59] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:35:59,289 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:35:59,289 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=2000.0 kvar | Type=overload_attack | interaction_id=d462aa3f-d8d1-44e3-b4b8-867692fefa8a | sequence=3
+2025-10-25 16:35:59,289 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+2000000.0j)
+2025-10-25 16:35:59,290 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:35:59] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:04,399 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:36:04,400 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:04] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:10,486 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:36:10,486 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=2ae3e886-4440-468c-b3c3-ae8e60f3dbe2 | sequence=1
+2025-10-25 16:36:10,486 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (-500000.0+0.0j)
+2025-10-25 16:36:10,487 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:10] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:10,592 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:36:10,592 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=-500.0 kW | Q=0.0 kvar | Type=reverse_power_injection | interaction_id=2ae3e886-4440-468c-b3c3-ae8e60f3dbe2 | sequence=2
+2025-10-25 16:36:10,592 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (-500000.0+0.0j)
+2025-10-25 16:36:10,593 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:10] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:15,701 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:36:15,702 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:15] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:19,650 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:36:19,650 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=084d620a-3fed-4ace-96c9-c7e711525a52 | sequence=1
+2025-10-25 16:36:19,651 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+0.0j)
+2025-10-25 16:36:19,652 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:19,756 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:36:19,756 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=0.0 kvar | Type=overload_attack | interaction_id=084d620a-3fed-4ace-96c9-c7e711525a52 | sequence=2
+2025-10-25 16:36:19,756 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+0.0j)
+2025-10-25 16:36:19,757 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:19] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:24,866 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:36:24,867 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:24] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:33,130 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:36:33,135 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:33] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:40,532 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:36:40,533 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:40] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:47,626 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:36:47,626 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV1 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=81d25657-9b54-4cc4-9888-8555edbeca05 | sequence=1
+2025-10-25 16:36:47,626 | INFO | src.ev_federate | Dispatching EV capacity command EV1 -> gld_hlc_conn/EV1 (4000000.0+500000.0j)
+2025-10-25 16:36:47,626 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:47] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:47,730 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:36:47,730 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV2 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=81d25657-9b54-4cc4-9888-8555edbeca05 | sequence=2
+2025-10-25 16:36:47,730 | INFO | src.ev_federate | Dispatching EV capacity command EV2 -> gld_hlc_conn/EV2 (4000000.0+500000.0j)
+2025-10-25 16:36:47,732 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:47] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:47,838 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:36:47,838 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV3 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=81d25657-9b54-4cc4-9888-8555edbeca05 | sequence=3
+2025-10-25 16:36:47,838 | INFO | src.ev_federate | Dispatching EV capacity command EV3 -> gld_hlc_conn/EV3 (4000000.0+500000.0j)
+2025-10-25 16:36:47,839 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:47] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:47,945 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:36:47,945 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV4 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=81d25657-9b54-4cc4-9888-8555edbeca05 | sequence=4
+2025-10-25 16:36:47,945 | INFO | src.ev_federate | Dispatching EV capacity command EV4 -> gld_hlc_conn/EV4 (4000000.0+500000.0j)
+2025-10-25 16:36:47,946 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:47] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:48,051 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:36:48,051 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV5 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=81d25657-9b54-4cc4-9888-8555edbeca05 | sequence=5
+2025-10-25 16:36:48,051 | INFO | src.ev_federate | Dispatching EV capacity command EV5 -> gld_hlc_conn/EV5 (4000000.0+500000.0j)
+2025-10-25 16:36:48,053 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:48] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:48,158 | INFO | src.server | Received primitive request: set_ev_capacity
+2025-10-25 16:36:48,158 | WARNING | src.action_service | ATTACK INJECTION: MALICIOUS | EV=EV6 | P=4000.0 kW | Q=500.0 kvar | Type=overload_attack | interaction_id=81d25657-9b54-4cc4-9888-8555edbeca05 | sequence=6
+2025-10-25 16:36:48,159 | INFO | src.ev_federate | Dispatching EV capacity command EV6 -> gld_hlc_conn/EV6 (4000000.0+500000.0j)
+2025-10-25 16:36:48,160 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:48] "POST /primitive HTTP/1.1" 200 -
+2025-10-25 16:36:53,270 | INFO | src.server | Received primitive request: get_grid_status
+2025-10-25 16:36:53,272 | INFO | werkzeug | 127.0.0.1 - - [25/Oct/2025 16:36:53] "POST /primitive HTTP/1.1" 200 -
