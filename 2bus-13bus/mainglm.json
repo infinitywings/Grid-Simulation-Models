@@ -3,7 +3,7 @@
     "coreName": "IEEE13bus Core",
     "coreType": "zmq",
     "name": "IEEE13bus_fed",
-    "period": 60,
+    "period": 30,
     "logfile": "IEEE13bus-gld.log",
     "log_level": "warning",
     "publications": [

@@ -3,7 +3,7 @@
   "coreName": "EVController Federate",
   "coreType": "zmq",
   "name": "EVControllerSim",
-  "period": 60,
+  "period": 30,
   "logfile": "output.log",
   "log_level": "warning",
   "publications": [

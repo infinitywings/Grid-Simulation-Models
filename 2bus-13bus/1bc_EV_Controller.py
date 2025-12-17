@@ -12,6 +12,7 @@ import logging
 import pandas as pd
 import numpy as np
 import argparse
+import os
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.StreamHandler())
@@ -76,10 +77,13 @@ if __name__ == "__main__":
     hours = 24
     total_interval = int(60 * 60 * hours)
     grantedtime = -1
-    update_interval = 1 * 60  # EV control interval (1 minute)
+
+    # Configurable EV control interval (seconds); default 60s for experiments
+    CONTROLLER_INTERVAL_SEC = int(os.getenv("CONTROLLER_INTERVAL_SEC", "60"))
+    update_interval = CONTROLLER_INTERVAL_SEC
 
     # Feeder limits (W)
-    feeder_limit_upper = 4.5e6
+    feeder_limit_upper = 4.8e6
     feeder_limit_lower = 2.6e6
 
     # Data storage
@@ -156,6 +160,7 @@ if __name__ == "__main__":
         # CONTROL LOGIC
         # -----------------------------------------------------------------
         P = feeder_real_power[-1]
+        action_taken = "unknown"
 
         # Case 1: Overload condition → turn OFF all EV stations
         if P >= feeder_limit_upper:
@@ -170,6 +175,7 @@ if __name__ == "__main__":
                 h.helicsEndpointSendBytes(endid[f"m{i}"], '0.0+0.0j')
 
             logger.info("{}: All EVs are now OFF due to overload.".format(federate_name))
+            action_taken = "overload_off"
 
         # Case 2: Safe range → only EV1 and EV2 ON, others OFF
         elif feeder_limit_lower < P < feeder_limit_upper:
@@ -186,6 +192,7 @@ if __name__ == "__main__":
             h.helicsEndpointSendBytes(endid["m3"], '200000+0.0j')  # EV2
             h.helicsEndpointSendBytes(endid["m4"], '210000+0.0j')  # EV1
             h.helicsEndpointSendBytes(endid["m5"], '200000+0.0j')  # EV2
+            action_taken = "safe_range_ev1_ev2_only"
 
             # Turn OFF EV3–EV6 (if they exist)
             # for i in range(2, endpoint_count):
@@ -209,6 +216,12 @@ if __name__ == "__main__":
                 h.helicsEndpointSendBytes(endid[f"m{i}"], p_cmd)
 
             logger.info("{}: All EVs are now charging.".format(federate_name))
+            action_taken = "low_load_all_on"
+
+        logger.info(
+            f"[CONTROLLER_ACTION] sim_time={grantedtime}s load_kw={P/1000.0:.1f} "
+            f"interval={update_interval}s action={action_taken}"
+        )
 
     # ---------------------------------------------------------------------
     # Plotting and saving results (after loop)

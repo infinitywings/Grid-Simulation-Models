@@ -1,5 +1,5 @@
 # file...... sw_status_stor_EV1.csv
-# date...... Tue Nov 18 20:46:01 2025
+# date...... Wed Dec  3 16:00:18 2025
 # user...... (null)
 # host...... (null)
 # target.... switch 820
@@ -16,3 +16,7 @@
 2013-08-28 02:00:00 PST,OPEN
 2013-08-28 02:20:00 PST,OPEN
 2013-08-28 02:40:00 PST,OPEN
+2013-08-28 03:00:00 PST,OPEN
+2013-08-28 03:20:00 PST,OPEN
+2013-08-28 03:40:00 PST,OPEN
+2013-08-28 04:00:00 PST,OPEN
