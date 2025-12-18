@@ -66,6 +66,36 @@ Key details:
 - One of the distribution systems (glm1) includes 6 EV stations where EV1 is attached to a battery energy storage system that connects during peak demand as an islanded system
 - Uses California traffic patterns for 3 EV stations (EV1, EV5, and EV6)
 
+## Simulation model and EV controller details
+
+### Simulation model (2bus-13bus)
+- **Transmission**: GridPACK-based IEEE 9-bus system (`gpk-left-fed.cpp`, `pf_app.cpp`) feeds two GridLAB-D feeders at Buses 2 and 3 (mapped to Node 650 in each feeder) via HELICS (`gpk-gld-cosim.json`).
+- **Distribution**: Two IEEE 123-node feeders:
+  - `1c_IEEE_123_feeder.glm`: includes six controllable EV charging stations at buses 5, 2, 88, 92, 107, and 114. EV1 is paired with a battery storage switch that can island during peak conditions.
+  - `1c_IEEE_123_feeder_2.glm`: parallel uncontrolled feeder.
+- **HELICS exchange (key topics)**:
+  - GridLAB-D publishes feeder power `gld_hlc_conn/Sa,Sb,Sc` and subscribes to transmission voltages `gridpack/Va,Vb,Vc`.
+  - GridPACK publishes `gridpack/Va,Vb,Vc` and subscribes to feeder power `gld_hlc_conn/Sa,Sb,Sc`.
+  - EV controller publishes setpoints `EV_Controller/EV1–EV6 → gld_hlc_conn/EV1–EV6` and (for storage-capable buses) switch commands; it subscribes to `gld_hlc_conn/Sa,Sb,Sc` for feeder loading.
+- **Operating limits (controller-driven)**: feeder load lower limit 2.6 MW; upper limit 4.8 MW in the primary controller (4.2 MW in the demo/secondary controller). Nominal line-to-neutral voltage ≈ 2401.8 V.
+
+### EV controllers
+
+**Primary controller (`1bc_EV_Controller.py`, config `1c_Control.json`)**
+- Registers HELICS combination federate from JSON, discovers EV endpoints dynamically, and subscribes to feeder real/reactive power.
+- Runs a 24-hour loop with a configurable interval (`CONTROLLER_INTERVAL_SEC`, default 60 s).
+- Control logic (acts on real power `P` from `gld_hlc_conn/S*`):
+  - `P ≥ 4.8 MW`: send `0+0j` to every EV endpoint → all EVs OFF.
+  - `2.6 MW < P < 4.8 MW`: keep **EV1/EV2** charging (commands 210 kW and 200 kW respectively; same pattern repeated per endpoint list) and leave others off.
+  - `P ≤ 2.6 MW`: turn **all EVs ON** using per-endpoint setpoints `[210, 200, 200, 200, 200, 206] kW` (falls back to 200 kW if more endpoints exist).
+- Records time-aligned feeder load and EV setpoints, writing `1c_EV_Outputs.csv`; generates `output/1c_Feeder_and_EVs_subplot.png` summarizing feeder load and EV outputs.
+- Finalizes by requesting max HELICS time, disconnecting, and destroying the federate.
+
+**Secondary/demo controller (`1bc_EV_Controller_2.py`, config `1c_Control_2.json`)**
+- Mirrors the HELICS setup but uses a shorter demo loop (`total_interval = 1` with 60 s steps) and limits of 2.6 MW / 4.2 MW.
+- Actions: overload → all EVs OFF; safe band → first two EVs commanded to 210 kW; low load → all EVs set to 200 kW.
+- Optionally plots live matplotlib subplots; saves results to `1c_EV_Outputs_2.csv` before finalizing the federate.
+
 ## Important Info about the Potential Spots for Attackers:
 
 <details>
