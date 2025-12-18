@@ -117,7 +117,7 @@ object transformer_configuration {
     install_type PADMOUNT;
     primary_voltage 138000.0;
     secondary_voltage 2401.7771;
-    power_rating 25.8 MVA;
+    power_rating 77.4 MVA;
     impedance 0.00033+0.0022j;
 };
 
@@ -299,6 +299,10 @@ object triplex_line_configuration {
     conductor_N tlc1000;
     insulation_thickness 0.08;
     diameter 0.522;
+    rating.summer.continuous 500 A;
+    rating.summer.emergency 700 A;
+    rating.winter.continuous 500 A;
+    rating.winter.emergency 700 A;
 };
 
 object line_configuration {
@@ -308,6 +312,10 @@ object line_configuration {
     conductor_C olc10001;
     conductor_N olc10002;
     spacing ls5001;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -317,6 +325,10 @@ object line_configuration {
     conductor_C olc10001;
     conductor_N olc10002;
     spacing ls5002;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -326,6 +338,10 @@ object line_configuration {
     conductor_C olc10001;
     conductor_N olc10002;
     spacing ls5003;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -335,6 +351,10 @@ object line_configuration {
     conductor_C olc10001;
     conductor_N olc10002;
     spacing ls5004;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -344,6 +364,10 @@ object line_configuration {
     conductor_C olc10001;
     conductor_N olc10002;
     spacing ls5005;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -353,6 +377,10 @@ object line_configuration {
     conductor_C olc10001;
     conductor_N olc10002;
     spacing ls5006;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -361,6 +389,10 @@ object line_configuration {
     conductor_C olc10001;
     conductor_N olc10002;
     spacing ls5007;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -369,6 +401,10 @@ object line_configuration {
     conductor_B olc10001;
     conductor_N olc10002;
     spacing ls5008;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -376,6 +412,10 @@ object line_configuration {
     conductor_A olc10009;
     conductor_N olc10009;
     spacing ls5009;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -383,6 +423,10 @@ object line_configuration {
     conductor_B olc10009;
     conductor_N olc10009;
     spacing ls50010;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -390,6 +434,10 @@ object line_configuration {
     conductor_C olc10009;
     conductor_N olc10009;
     spacing ls50011;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object line_configuration {
@@ -398,6 +446,10 @@ object line_configuration {
     conductor_B ulc10003;
     conductor_C ulc10003;
     spacing ls50012;
+    rating.summer.continuous 1500 A;
+    rating.summer.emergency 2000 A;
+    rating.winter.continuous 1500 A;
+    rating.winter.emergency 2000 A;
 };
 
 object overhead_line {
