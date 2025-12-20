@@ -40,8 +40,8 @@
       }
     },
     {
-      "directory": "/app/ev_setpoint_mcp",
-      "exec": "python run_server.py --config config/ev_mcp_local.yaml",
+      "directory": "/app/llm_grid_eval",
+      "exec": "bash -c 'PYTHONPATH=/app/llm_grid_eval/src python -m llm_grid_eval.server --config config/default.yaml'",
       "host": "localhost",
       "name": "ev_attacker_mcp",
       "environment": {
