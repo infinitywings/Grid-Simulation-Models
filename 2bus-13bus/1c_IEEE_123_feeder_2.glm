@@ -16,6 +16,9 @@ clock {
 #set relax_naming_rules=1;
 #set randomseed=10;
 #set suppress_repeat_messages=True;
+// Relaxed voltage limits for attack experiment stability
+#set minimum_voltages=0.7;
+#set maximum_voltages=1.3;
 
 module market {
 }
@@ -50,7 +53,7 @@ module residential {
 module powerflow {
     solver_method FBS;
     default_maximum_voltage_error 1e-4;  //1e-4
-    line_limits TRUE;
+    line_limits FALSE;  // Disabled to prevent overload trips during attack experiments
 }
 
 class player {
