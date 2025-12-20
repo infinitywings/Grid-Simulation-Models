@@ -78,7 +78,7 @@ int main(int argc, char **argv) {
   gpk_left.enterExecutingMode();
   std::cout << "GridPACK Federate has entered execution mode." << std::endl;
   // Simulation Initialization
-  double total_interval = 10.0;
+  double total_interval = 7200.0;
   double grantedtime = 0.0;
 
   auto Sa = std::complex<double>(0.0,0.0);
